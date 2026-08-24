@@ -1,75 +1,70 @@
-type Project = {
-  name: string;
-  category: string;
-  image: string;
+type WorkArea = {
+  title: string;
+  label: string;
+  gradient: string;
 };
 
-const projects: Project[] = [
+const workAreas: WorkArea[] = [
   {
-    name: "Studie Bijdehand",
-    category: "Diseño web",
-    image: "/images/project-studie-bijdehand.jpg",
+    title: "Coberturas de eventos",
+    label: "Sociales · Corporativos · Deportivos",
+    gradient: "bg-gradient-to-br from-[#3379e7] to-[#8b6ff0]",
   },
   {
-    name: "Fondation Saint-Luc",
-    category: "Diseño web · SEO",
-    image: "/images/project-fondation-saint-luc.jpg",
+    title: "Foto Studio",
+    label: "Fotografía comercial y corporativa",
+    gradient: "bg-gradient-to-br from-[#8b6ff0] to-[#3fd0e8]",
   },
   {
-    name: "Goshop Energy",
-    category: "eCommerce",
-    image: "/images/project-goshop-energy.jpg",
+    title: "Branding",
+    label: "Identidad corporativa",
+    gradient: "bg-gradient-to-br from-[#4a3b94] to-[#3379e7]",
   },
   {
-    name: "Bonne Maman",
-    category: "Branding",
-    image: "/images/project-bonne-maman.jpg",
+    title: "Diseño web",
+    label: "Sitios y plataformas digitales",
+    gradient: "bg-gradient-to-br from-[#3fd0e8] to-[#3379e7]",
   },
   {
-    name: "Sakaya",
-    category: "eCommerce",
-    image: "/images/project-sakaya.jpg",
+    title: "Producción audiovisual",
+    label: "Video y edición",
+    gradient: "bg-gradient-to-br from-[#8b6ff0] to-[#4a3b94]",
   },
   {
-    name: "SMD",
-    category: "Diseño web",
-    image: "/images/project-smd.jpg",
+    title: "Redes sociales",
+    label: "Gestión y contenido",
+    gradient: "bg-gradient-to-br from-[#3379e7] to-[#3fd0e8]",
   },
 ];
 
 export function ProjectsShowcase() {
   return (
-    <section className="bg-black py-20 text-white">
+    <section className="bg-transparent py-20 text-white">
       <div className="mx-auto max-w-[1320px] px-5 md:px-10">
         <h2 className="font-display text-[40px] leading-none tracking-tight">
-          Últimos proyectos
+          Nuestro trabajo
         </h2>
+        <p className="mt-4 text-[18px] text-white/60">
+          Áreas en las que damos vida a tu marca.
+        </p>
 
-        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
-          {projects.map((project) => (
-            <a
-              key={project.name}
-              href="#"
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {workAreas.map((area) => (
+            <article
+              key={area.title}
               className="group block rounded-2xl transition-transform duration-300 ease-out hover:-translate-y-2"
             >
-              <div className="overflow-hidden rounded-2xl bg-[#151515]">
-                <img
-                  src={project.image}
-                  alt={project.name}
-                  loading="lazy"
-                  className="aspect-[4/3] w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                />
-              </div>
-
-              <div className="mt-5">
-                <span className="text-[12px] font-medium uppercase tracking-wider text-[#72F5E3]">
-                  {project.category}
+              <div
+                className={`relative flex aspect-[4/3] w-full flex-col justify-end overflow-hidden rounded-2xl border border-white/10 p-6 ${area.gradient}`}
+              >
+                <span className="text-[12px] font-medium uppercase tracking-wider text-white/80">
+                  {area.label}
                 </span>
-                <h3 className="font-display mt-1 text-[22px] leading-tight text-white">
-                  {project.name}
+                <h3 className="font-display mt-1 text-[24px] leading-tight text-white">
+                  {area.title}
                 </h3>
               </div>
-            </a>
+            </article>
           ))}
         </div>
       </div>

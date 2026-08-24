@@ -10,7 +10,7 @@ const inter = Inter({
   display: "swap",
 });
 
-// Self-hosted from design.odoo.com — the display face the original uses.
+// Bold display face for headings.
 const obviously = localFont({
   variable: "--font-display",
   src: [
@@ -22,9 +22,9 @@ const obviously = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Website Design with Odoo | Get a free quote in 1 Min",
+  title: "NIUCOM | Agencia de Marketing y Comunicación",
   description:
-    "Custom website, eCommerce and logo design powered by Odoo. Expert designers, front-end developers & SEO specialists. Request your free quote.",
+    "Conectamos creatividad con propósito. Somos una agencia creativa que combina estrategia, diseño y tecnología para hacer crecer tu marca.",
 };
 
 export default function RootLayout({
@@ -35,7 +35,7 @@ export default function RootLayout({
       lang="es"
       className={`${inter.variable} ${obviously.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-black text-white">
+      <body className="min-h-full flex flex-col text-white">
         {children}
       </body>
     </html>

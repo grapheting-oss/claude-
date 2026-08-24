@@ -10,69 +10,57 @@ type FooterColumn = {
   links: FooterLink[];
 };
 
-type SocialLink = {
-  label: string;
-  href: string;
-  icon: string;
-};
-
 const columns: FooterColumn[] = [
   {
     heading: "Navegación",
     links: [
       { label: "Inicio", href: "#" },
-      { label: "Sobre nosotros", href: "#" },
-      { label: "Proyectos", href: "#" },
-      { label: "Contact", href: "#" },
+      { label: "Nosotros", href: "#" },
+      { label: "Servicios", href: "#" },
+      { label: "Portafolio", href: "#" },
+      { label: "Contacto", href: "#" },
     ],
   },
   {
     heading: "Servicios",
     links: [
+      { label: "Marketing estratégico", href: "#" },
+      { label: "Gestión de redes", href: "#" },
       { label: "Diseño web", href: "#" },
-      { label: "Diseño de logos", href: "#" },
-      { label: "Fotografía", href: "#" },
-      { label: "SEO", href: "#" },
-      { label: "Marketing", href: "#" },
+      { label: "Producción audiovisual", href: "#" },
+      { label: "Branding", href: "#" },
     ],
   },
   {
-    heading: "Oficinas",
+    heading: "Contacto",
     links: [
-      { label: "Bélgica", href: "#" },
-      { label: "Buffalo", href: "#" },
-      { label: "Dubái", href: "#" },
-      { label: "Gujarat", href: "#" },
+      { label: "niucom.ec@gmail.com", href: "mailto:niucom.ec@gmail.com" },
+      { label: "0987245860", href: "https://wa.me/593987245860" },
+      { label: "@niucom.ec", href: "https://instagram.com/niucom.ec" },
+      { label: "Ecuador", href: "#" },
     ],
   },
 ];
 
-const socials: SocialLink[] = [
-  { label: "Behance", href: "#", icon: "/images/social-behance.svg" },
-  { label: "Dribbble", href: "#", icon: "/images/social-dribbble.svg" },
-  { label: "Instagram", href: "#", icon: "/images/social-instagram.svg" },
-  { label: "YouTube", href: "#", icon: "/images/social-youtube.svg" },
-];
-
-const legalLinks: FooterLink[] = [
-  { label: "Política de privacidad", href: "#" },
-  { label: "Términos y condiciones", href: "#" },
+const socialLinks: FooterLink[] = [
+  { label: "Instagram", href: "https://instagram.com/niucom.ec" },
+  { label: "WhatsApp", href: "https://wa.me/593987245860" },
 ];
 
 export function SiteFooter() {
   return (
-    <footer className="bg-black text-white">
+    <footer className="bg-transparent text-white">
       <div className="mx-auto max-w-[1320px] px-5 md:px-10">
-        <div className="rounded-t-[2.5rem] bg-[#151515] px-6 pb-10 pt-20 md:px-12">
+        <div className="rounded-t-[2.5rem] bg-[#1e1150] px-6 pb-10 pt-20 md:px-12">
           <div className="flex flex-col items-start gap-10 lg:flex-row lg:items-end lg:justify-between">
-            <h2 className="font-display max-w-3xl text-[clamp(40px,7vw,80px)] font-bold leading-[0.98] tracking-tight text-white">
-              ¿Estás listo para crear tu sitio web usando Odoo?
+            <h2 className="font-display max-w-3xl text-[clamp(36px,7vw,72px)] font-bold leading-[0.98] tracking-tight text-white">
+              ¿Estás listo para hacer crecer tu marca?
             </h2>
             <a
-              href="#"
-              className="group inline-flex shrink-0 items-center gap-2 rounded-full bg-[#E7FE56] px-7 py-4 text-[15px] font-semibold text-black transition-transform duration-300 hover:scale-[1.03]"
+              href="mailto:niucom.ec@gmail.com"
+              className="group inline-flex shrink-0 items-center gap-2 rounded-full bg-[#3fd0e8] hover:bg-[#5cdcf0] px-7 py-4 text-[15px] font-semibold text-[#0e0730] transition-transform duration-300 hover:scale-[1.03]"
             >
-              Solicitar presupuesto
+              Cotiza tu proyecto
               <ArrowUpRightIcon
                 aria-hidden="true"
                 className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
@@ -102,25 +90,20 @@ export function SiteFooter() {
             ))}
 
             <div>
-              <img
-                src="/images/odoo-horizontal.svg"
-                alt="Odoo"
-                className="h-6 w-auto brightness-200"
-              />
-              <div className="mt-6 flex items-center gap-4">
-                {socials.map((social) => (
+              <span className="font-display text-2xl font-bold tracking-tight text-white">
+                NIUCOM
+              </span>
+              <p className="mt-3 text-[14px] text-white/70">
+                Marketing y comunicación
+              </p>
+              <div className="mt-6 flex flex-col gap-3">
+                {socialLinks.map((social) => (
                   <a
                     key={social.label}
                     href={social.href}
-                    aria-label={social.label}
-                    className="text-white/70 transition-opacity duration-200 hover:opacity-70"
+                    className="text-[14px] text-white/70 transition-colors duration-200 hover:text-white"
                   >
-                    <img
-                      src={social.icon}
-                      alt=""
-                      aria-hidden="true"
-                      className="h-6 w-6"
-                    />
+                    {social.label}
                   </a>
                 ))}
               </div>
@@ -129,21 +112,11 @@ export function SiteFooter() {
 
           <div className="mt-16 flex flex-col gap-4 border-t border-white/10 pt-8 md:flex-row md:items-center md:justify-between">
             <p className="text-[12px] text-white/40">
-              © 2026 Odoo. Todos los derechos reservados.
+              © 2026 NIUCOM · Agencia de Marketing y Comunicación
             </p>
-            <div className="flex flex-wrap items-center gap-2 text-[12px] text-white/40">
-              {legalLinks.map((link, index) => (
-                <span key={link.label} className="flex items-center gap-2">
-                  {index > 0 && <span aria-hidden="true">·</span>}
-                  <a
-                    href={link.href}
-                    className="transition-colors duration-200 hover:text-white"
-                  >
-                    {link.label}
-                  </a>
-                </span>
-              ))}
-            </div>
+            <p className="text-[12px] text-[#3fd0e8]/60">
+              Conectamos creatividad con propósito
+            </p>
           </div>
         </div>
       </div>

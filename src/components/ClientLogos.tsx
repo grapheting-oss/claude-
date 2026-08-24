@@ -1,30 +1,28 @@
-interface ClientLogo {
-  src: string;
-  alt: string;
-}
-
-const logos: ClientLogo[] = [
-  { src: "/images/client-televie.png", alt: "Télévie" },
-  { src: "/images/client-fondation.png", alt: "Fondation" },
-  { src: "/images/client-dreambaby.png", alt: "Dreambaby" },
-  { src: "/images/client-cefora.png", alt: "Cefora" },
-  { src: "/images/client-flowup.png", alt: "FlowUp" },
-  { src: "/images/client-maisondandoy.png", alt: "Maison Dandoy" },
+const pillars: string[] = [
+  "Gestión de redes sociales",
+  "Pauta y campañas",
+  "Diseño web",
+  "Plataformas y automatización",
+  "Diseño gráfico y audiovisual",
 ];
 
 export function ClientLogos() {
   return (
-    <section className="bg-black py-14">
+    <section className="bg-transparent py-14">
       <div className="mx-auto max-w-[1320px] px-5 md:px-10">
-        <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8 md:justify-between">
-          {logos.map((logo) => (
-            <img
-              key={logo.src}
-              src={logo.src}
-              alt={logo.alt}
-              loading="lazy"
-              className="h-8 w-auto opacity-70 grayscale contrast-0 brightness-200 transition-opacity duration-300 hover:opacity-100 md:h-10"
-            />
+        <p className="text-center font-mono text-[12px] uppercase tracking-[0.2em] text-white/40">
+          Marketing digital y redes sociales
+        </p>
+
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+          {pillars.map((pillar) => (
+            <span
+              key={pillar}
+              className="flex items-center gap-2 rounded-full border border-white/15 px-5 py-2.5 text-[15px] text-white"
+            >
+              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#3fd0e8]" />
+              {pillar}
+            </span>
           ))}
         </div>
       </div>

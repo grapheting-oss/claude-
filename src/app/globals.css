@@ -13,12 +13,14 @@
   --font-mono: ui-monospace, monospace;
   --font-heading: var(--font-display);
 
-  /* Odoo design brand tokens */
-  --color-od-lav: #d5bff0;
-  --color-od-mint: #72f5e3;
-  --color-od-lime: #e7fe56;
-  --color-od-dark: #151515;
-  --color-od-gray: #373737;
+  /* NIUCOM brand tokens */
+  --color-niu-blue: #3379e7;
+  --color-niu-violet: #8b6ff0;
+  --color-niu-purple: #4a3b94;
+  --color-niu-cyan: #3fd0e8;
+  --color-niu-surface: #1e1150;
+  --color-niu-lav: #d1cde4;
+  --color-niu-cream: #f4f1e6;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -131,9 +133,15 @@
     @apply border-border outline-ring/50;
   }
   body {
-    background-color: #000;
     color: #fff;
     font-family: var(--font-body), Helvetica, Arial, sans-serif;
+    background-color: #140a30;
+    background-image:
+      radial-gradient(1100px 700px at 85% 8%, rgba(51, 121, 231, 0.4), transparent 60%),
+      radial-gradient(900px 700px at 10% 30%, rgba(139, 111, 240, 0.34), transparent 60%),
+      radial-gradient(1200px 900px at 50% 100%, rgba(74, 59, 148, 0.4), transparent 65%),
+      linear-gradient(165deg, #17092e 0%, #1d1150 45%, #241663 100%);
+    background-attachment: fixed;
   }
   html {
     @apply font-sans;
@@ -159,7 +167,7 @@
 .od-marquee-track {
   display: inline-flex;
   white-space: nowrap;
-  animation: od-marquee 24s linear infinite;
+  animation: od-marquee 120s linear infinite;
 }
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

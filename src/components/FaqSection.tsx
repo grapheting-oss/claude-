@@ -10,34 +10,34 @@ type FaqItem = {
 
 const faqs: FaqItem[] = [
   {
-    question: "¿Cuáles son los precios?",
+    question: "¿Qué servicios ofrece NIUCOM?",
     answer:
-      "Cada proyecto se cotiza a medida según su alcance, número de páginas y funcionalidades. Solicita un presupuesto y te enviamos una propuesta clara y sin compromiso.",
+      "Somos una agencia de marketing y comunicación que cubre estrategia, gestión de redes, diseño web, branding y producción audiovisual. Integramos todo en un plan a la medida de tu marca.",
   },
   {
-    question: "¿Qué pasa si necesito más horas?",
+    question: "¿Trabajan con emprendimientos y organizaciones?",
     answer:
-      "No hay problema: puedes ampliar tu paquete de horas en cualquier momento. Te avisamos antes de superar lo acordado para que siempre tengas el control del presupuesto.",
+      "Sí, acompañamos tanto a emprendimientos que arrancan como a empresas y organizaciones consolidadas. Adaptamos el alcance y el presupuesto a cada etapa de tu proyecto.",
   },
   {
-    question: "¿Hay tarifas de mantenimiento?",
+    question: "¿Cómo empezamos un proyecto?",
     answer:
-      "Ofrecemos planes de mantenimiento opcionales para mantener tu sitio actualizado y seguro. También puedes gestionarlo por tu cuenta gracias a la sencillez de Odoo.",
+      "Todo parte de una conversación para entender tus objetivos y tu público. Con esa información armamos una propuesta clara con tiempos, entregables y presupuesto.",
   },
   {
-    question: "¿Ofrecen formación?",
+    question: "¿Manejan redes sociales y pauta publicitaria?",
     answer:
-      "Sí, incluimos sesiones de formación para que tu equipo domine el gestor de contenidos de Odoo. Así podrás editar textos, imágenes y páginas de forma autónoma.",
+      "Gestionamos tus redes con contenido con propósito y creatividad, y también planificamos campañas de pauta. Optimizamos la inversión para que cada anuncio genere resultados medibles.",
   },
   {
-    question: "¿Puedo solicitar funciones adicionales más adelante?",
+    question: "¿Hacen cobertura de eventos y producción audiovisual?",
     answer:
-      "Por supuesto. Odoo es modular, así que podemos añadir tienda online, blog, reservas o cualquier otra función cuando tu negocio lo necesite.",
+      "Realizamos cobertura de eventos, fotografía y video con un enfoque cuidado en cada detalle. Entregamos material listo para publicar y para fortalecer la imagen de tu marca.",
   },
   {
-    question: "¿Ustedes redactan contenido?",
+    question: "¿Cómo solicito una cotización?",
     answer:
-      "Contamos con redactores especializados que crean textos claros y optimizados para SEO. Trabajamos contigo para reflejar el tono y los objetivos de tu marca.",
+      "Escríbenos a niucom.ec@gmail.com, por WhatsApp al 0987245860 o en Instagram @niucom.ec. Te respondemos con una propuesta personalizada y sin compromiso.",
   },
 ];
 
@@ -45,14 +45,14 @@ export function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="bg-black py-24 text-white">
+    <section className="bg-transparent py-24 text-white">
       <div className="mx-auto max-w-[900px] px-5 md:px-10">
         <div className="text-center">
           <h2 className="font-display text-[clamp(32px,5vw,40px)] font-bold leading-[1.05] tracking-tight">
-            Preguntas frecuentes (FAQ)
+            Preguntas frecuentes
           </h2>
           <p className="mt-4 text-[16px] text-white/60">
-            ¿Tiene preguntas? Nosotros tenemos respuestas.
+            Resolvemos tus dudas antes de empezar.
           </p>
         </div>
 
@@ -80,7 +80,7 @@ export function FaqSection() {
                   </span>
                   <PlusIcon
                     aria-hidden="true"
-                    className={`h-5 w-5 shrink-0 text-[#D5BFF0] transition-transform duration-300 ${
+                    className={`h-5 w-5 shrink-0 text-[#3fd0e8] transition-transform duration-300 ${
                       isOpen ? "rotate-45" : "rotate-0"
                     }`}
                   />

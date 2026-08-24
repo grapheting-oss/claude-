@@ -1,3 +1,5 @@
+import { ArrowRightIcon } from "@/components/icons";
+
 type Service = {
   number: string;
   title: string;
@@ -7,77 +9,96 @@ type Service = {
 const services: Service[] = [
   {
     number: "01",
-    title: "Diseño web",
-    description:
-      "Sitios web a medida, rápidos y centrados en el usuario, construidos con Odoo.",
+    title: "Marketing estratégico",
+    description: "Estrategias que impulsan el crecimiento de tu marca.",
   },
   {
     number: "02",
-    title: "Diseño de logo",
-    description:
-      "Identidades visuales memorables que capturan la esencia de tu marca.",
+    title: "Gestión de redes sociales",
+    description: "Contenido y comunidad que conectan con tu audiencia.",
   },
   {
     number: "03",
-    title: "Fotografía",
-    description:
-      "Imágenes profesionales de producto y marca para destacar tu historia.",
+    title: "Pauta y campañas digitales",
+    description: "Google Ads, Meta y TikTok con seguimiento de KPIs y ROI.",
   },
   {
     number: "04",
-    title: "SEO",
-    description:
-      "Optimización técnica y de contenido para posicionar tu sitio en buscadores.",
+    title: "Diseño y desarrollo web",
+    description: "Sitios y plataformas digitales a la medida de tu marca.",
   },
   {
     number: "05",
-    title: "Marketing",
-    description:
-      "Estrategias digitales que convierten visitantes en clientes.",
+    title: "Producción audiovisual",
+    description: "Fotografía, video y edición profesional.",
+  },
+  {
+    number: "06",
+    title: "Diseño gráfico y branding",
+    description: "Identidad corporativa y piezas que hablan por tu marca.",
+  },
+  {
+    number: "07",
+    title: "Comunicación corporativa",
+    description: "Mensajes claros que construyen confianza y reputación.",
+  },
+  {
+    number: "08",
+    title: "Consultoría en comunicación y marketing",
+    description: "Acompañamiento estratégico para tomar mejores decisiones.",
   },
 ];
 
 export function ServicesList() {
   return (
-    <section className="bg-black py-24 text-white">
-      <div className="mx-auto max-w-[1320px] px-5 md:px-10">
-        <ul className="border-b border-white/15">
-          {services.map((service) => (
-            <li
-              key={service.number}
-              className="group grid grid-cols-1 items-baseline gap-4 border-t border-white/15 py-8 md:grid-cols-[auto_1fr_minmax(0,22rem)] md:gap-10"
-            >
-              <span
-                className="font-display text-[24px] leading-none text-[#72F5E3]"
-                aria-hidden="true"
-              >
-                {service.number}
-              </span>
+    <section className="bg-transparent py-24 text-white">
+      {/* Contained heading */}
+      <div className="mx-auto mb-14 max-w-[1320px] px-5 md:px-10">
+        <h2 className="font-display text-[48px] font-bold leading-[1.05] tracking-tight text-white">
+          Nuestros servicios
+        </h2>
+        <p className="mt-4 text-[18px] leading-relaxed text-white/60">
+          Soluciones creativas desde lo que tu marca realmente necesita.
+        </p>
+      </div>
 
-              <h3 className="font-display flex items-center gap-4 text-[clamp(40px,6vw,72px)] font-bold leading-[0.95] tracking-tight text-white transition-colors duration-300 group-hover:text-[#E7FE56]">
-                {service.title}
-                <svg
-                  className="h-[0.5em] w-[0.5em] shrink-0 -translate-x-2 text-[#E7FE56] opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2.5}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+      {/* Full-width rows: dividers + hover band bleed edge-to-edge,
+          content stays inside the centered container. */}
+      <ul className="w-full border-b border-white/12">
+        {services.map((service) => (
+          <li key={service.number} className="border-t border-white/12">
+            <a
+              href="#cta"
+              className="group block transition-colors duration-300 hover:bg-white/[0.04]"
+            >
+              <div className="mx-auto flex max-w-[1320px] items-center gap-5 px-5 py-7 md:gap-10 md:px-10">
+                <span
+                  className="font-display w-8 shrink-0 text-[20px] leading-none text-[#3fd0e8]"
                   aria-hidden="true"
                 >
-                  <path d="M7 17 17 7" />
-                  <path d="M7 7h10v10" />
-                </svg>
-              </h3>
+                  {service.number}
+                </span>
 
-              <p className="text-[16px] leading-relaxed text-white/60 md:text-right">
-                {service.description}
-              </p>
-            </li>
-          ))}
-        </ul>
-      </div>
+                <div className="min-w-0 flex-1">
+                  <h3 className="font-display text-[clamp(28px,4.2vw,52px)] font-bold leading-[0.98] tracking-tight text-white transition-transform duration-300 group-hover:translate-x-1">
+                    {service.title}
+                  </h3>
+                  <p className="mt-2 text-[15px] leading-relaxed text-white/55">
+                    {service.description}
+                  </p>
+                </div>
+
+                <span
+                  aria-hidden="true"
+                  className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-white/20 text-white/50 transition-all duration-300 group-hover:scale-110 group-hover:border-transparent group-hover:bg-[#3fd0e8] group-hover:text-[#0e0730] md:h-14 md:w-14"
+                >
+                  <ArrowRightIcon className="h-5 w-5" />
+                </span>
+              </div>
+            </a>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }

@@ -1,63 +1,52 @@
-interface ValueProp {
-  number: string;
-  title: string;
-  description: string;
+type ManifestoLine = {
+  label: string;
+  statement: string;
   accent: string;
-}
+};
 
-const valueProps: ValueProp[] = [
+const manifestoLines: ManifestoLine[] = [
   {
-    number: "01",
-    title: "Diseñadores expertos",
-    description:
-      "Un equipo creativo dedicado a hacer que tu marca destaque.",
-    accent: "#D5BFF0",
+    label: "Somos",
+    statement: "UNA AGENCIA CREATIVA",
+    accent: "#3fd0e8",
   },
   {
-    number: "02",
-    title: "Desarrollo front-end",
-    description: "Sitios rápidos, responsivos y construidos sobre Odoo.",
-    accent: "#72F5E3",
+    label: "Combinamos",
+    statement: "ESTRATEGIA · DISEÑO · TECNOLOGÍA",
+    accent: "#8b6ff0",
   },
   {
-    number: "03",
-    title: "Especialistas en SEO",
-    description: "Optimizamos cada página para que te encuentren.",
-    accent: "#E7FE56",
+    label: "Logramos",
+    statement: "HACER CRECER TU MARCA",
+    accent: "#3379e7",
   },
 ];
 
 export function TrustSection() {
   return (
-    <section className="bg-black py-24">
+    <section className="bg-transparent py-24">
       <div className="mx-auto max-w-[1320px] px-5 md:px-10">
-        <h2 className="font-display max-w-3xl text-[clamp(40px,6vw,64px)] font-bold leading-[1.05] tracking-tight text-white">
-          Tu sitio web está en buenas manos
-        </h2>
-        <div className="mt-16 grid gap-8 md:grid-cols-3">
-          {valueProps.map((prop) => (
-            <div
-              key={prop.number}
-              className="rounded-3xl border border-white/10 bg-[#151515] p-8"
-            >
+        <div className="flex flex-col gap-6">
+          {manifestoLines.map((line) => (
+            <div key={line.statement}>
               <span
-                className="font-display block text-5xl font-bold leading-none"
-                style={{ color: prop.accent }}
+                className="block text-[15px] font-medium uppercase tracking-[0.2em]"
+                style={{ color: line.accent }}
               >
-                {prop.number}
+                {line.label}
               </span>
-              <h3
-                className="font-display mt-6 text-[22px] font-bold leading-tight"
-                style={{ color: prop.accent }}
-              >
-                {prop.title}
-              </h3>
-              <p className="mt-3 text-base leading-relaxed text-white/60">
-                {prop.description}
-              </p>
+              <span className="font-display mt-2 block text-[clamp(32px,6vw,64px)] font-bold leading-[1.05] tracking-tight text-white">
+                {line.statement}
+              </span>
             </div>
           ))}
         </div>
+
+        <p className="mt-12 max-w-2xl text-[18px] leading-relaxed text-white/70">
+          Las grandes marcas no solo venden productos o servicios; construyen
+          relaciones, generan confianza y crean experiencias que permanecen en la
+          memoria de las personas.
+        </p>
       </div>
     </section>
   );
