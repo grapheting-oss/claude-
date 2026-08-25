@@ -50,7 +50,7 @@ export function HeroSection() {
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#160b33]/40 via-transparent to-[#160b33]/85" />
 
       {/* Brand radial glows */}
-      <div className="pointer-events-none absolute -right-20 top-1/4 h-[560px] w-[560px] rounded-full bg-[#3fd0e8]/20 blur-[150px]" />
+      <div className="pointer-events-none absolute -right-20 top-1/4 h-[560px] w-[560px] rounded-full bg-[#2f85c2]/20 blur-[150px]" />
       <div className="pointer-events-none absolute bottom-0 left-1/4 h-[440px] w-[440px] rounded-full bg-[#8b6ff0]/20 blur-[140px]" />
 
       <div className="relative mx-auto w-full max-w-[1320px] px-5 pt-36 pb-24 md:px-10 md:pt-40 md:pb-28">
@@ -67,7 +67,7 @@ export function HeroSection() {
             >
               <path
                 d="M2 12 C 30 2, 45 18, 75 10 S 120 2, 150 12 S 210 18, 240 8 S 285 4, 298 12"
-                stroke="#3fd0e8"
+                stroke="#2f85c2"
                 strokeWidth="4"
                 strokeLinecap="round"
               />
@@ -83,7 +83,7 @@ export function HeroSection() {
         <div className="mt-10 flex flex-wrap items-center gap-5">
           <a
             href="#cta"
-            className="group inline-flex items-center gap-5 rounded-full bg-[#3fd0e8] py-3 pl-9 pr-3 text-lg font-semibold text-[#0e0730] transition-colors hover:bg-[#5cdcf0]"
+            className="group inline-flex items-center gap-5 rounded-full bg-[#2f85c2] py-3 pl-9 pr-3 text-lg font-semibold text-white transition-colors hover:bg-[#3f97d1]"
           >
             Cotiza tu proyecto
             <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/20 transition-transform group-hover:rotate-45">
@@ -92,7 +92,7 @@ export function HeroSection() {
           </a>
           <a
             href="#services"
-            className="text-base text-white/70 underline-offset-4 transition-colors hover:text-[#3fd0e8] hover:underline"
+            className="text-base text-white/70 underline-offset-4 transition-colors hover:text-[#2f85c2] hover:underline"
           >
             Ver servicios
           </a>
@@ -112,7 +112,7 @@ export function HeroSection() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={label}
-            className="pointer-events-auto text-white/60 transition-colors hover:text-[#3fd0e8]"
+            className="pointer-events-auto text-white/60 transition-colors hover:text-[#2f85c2]"
           >
             <Icon />
           </a>

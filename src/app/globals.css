@@ -17,7 +17,7 @@
   --color-niu-blue: #3379e7;
   --color-niu-violet: #8b6ff0;
   --color-niu-purple: #4a3b94;
-  --color-niu-cyan: #3fd0e8;
+  --color-niu-cyan: #2f85c2;
   --color-niu-surface: #1e1150;
   --color-niu-lav: #d1cde4;
   --color-niu-cream: #f4f1e6;
@@ -171,3 +171,17 @@
 }
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Infinite auto-sliding services carousel */
+@keyframes niu-slide {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+.niu-slide-track {
+  width: max-content;
+  animation: niu-slide 45s linear infinite;
+}
+.niu-slide-track:hover { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .niu-slide-track { animation: none; }
+}

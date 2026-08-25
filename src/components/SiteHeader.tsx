@@ -44,7 +44,7 @@ export function SiteHeader() {
             <a
               key={n.label}
               href={n.href}
-              className="text-[17px] text-white/85 transition-colors hover:text-[#3fd0e8]"
+              className="text-[17px] text-white/85 transition-colors hover:text-[#2f85c2]"
             >
               {n.label}
             </a>
@@ -54,7 +54,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-3">
           <a
             href="#cta"
-            className="hidden items-center gap-2 rounded-full bg-[#3fd0e8] hover:bg-[#5cdcf0] px-6 py-3 text-[15px] font-medium text-[#0e0730] transition-transform hover:scale-105 sm:inline-flex"
+            className="hidden items-center gap-2 rounded-full bg-[#2f85c2] hover:bg-[#3f97d1] px-6 py-3 text-[15px] font-medium text-white transition-transform hover:scale-105 sm:inline-flex"
           >
             Cotiza tu proyecto
             <ArrowUpRightIcon className="h-4 w-4" />
@@ -78,7 +78,7 @@ export function SiteHeader() {
                 key={n.label}
                 href={n.href}
                 onClick={() => setOpen(false)}
-                className="font-display text-2xl text-white/90 transition-colors hover:text-[#3fd0e8]"
+                className="font-display text-2xl text-white/90 transition-colors hover:text-[#2f85c2]"
               >
                 {n.label}
               </a>
@@ -86,7 +86,7 @@ export function SiteHeader() {
             <a
               href="#cta"
               onClick={() => setOpen(false)}
-              className="mt-4 inline-flex w-fit items-center gap-2 rounded-full bg-[#3fd0e8] hover:bg-[#5cdcf0] px-6 py-3 text-sm font-medium text-[#0e0730]"
+              className="mt-4 inline-flex w-fit items-center gap-2 rounded-full bg-[#2f85c2] hover:bg-[#3f97d1] px-6 py-3 text-sm font-medium text-white"
             >
               Cotiza tu proyecto
               <ArrowUpRightIcon className="h-4 w-4" />

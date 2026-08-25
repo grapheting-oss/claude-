@@ -25,7 +25,7 @@ function LoopSeparator() {
 
 export function ServicesMarquee() {
   return (
-    <section className="overflow-hidden border-y border-white/10 bg-transparent py-6 md:py-10">
+    <section className="overflow-hidden border-t border-white/10 bg-transparent py-6 md:py-10">
       <div className="overflow-hidden">
         <div className="od-marquee-track items-center">
           {repeated.map((phrase, index) => {

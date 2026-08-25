@@ -8,7 +8,7 @@ const manifestoLines: ManifestoLine[] = [
   {
     label: "Somos",
     statement: "UNA AGENCIA CREATIVA",
-    accent: "#3fd0e8",
+    accent: "#2f85c2",
   },
   {
     label: "Combinamos",

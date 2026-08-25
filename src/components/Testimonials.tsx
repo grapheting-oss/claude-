@@ -49,7 +49,7 @@ export function Testimonials() {
                   <div className="font-display text-[24px] font-bold text-white">
                     {member.name}
                   </div>
-                  <div className="text-[13px] font-medium text-[#3fd0e8]">
+                  <div className="text-[13px] font-medium text-[#2f85c2]">
                     {member.role}
                   </div>
                 </div>
@@ -59,7 +59,7 @@ export function Testimonials() {
                 {member.bio}
               </p>
 
-              <blockquote className="mt-6 border-l-2 border-[#3fd0e8] pl-4 text-[15px] italic leading-relaxed text-white">
+              <blockquote className="mt-6 border-l-2 border-[#2f85c2] pl-4 text-[15px] italic leading-relaxed text-white">
                 {member.quote}
               </blockquote>
             </article>

@@ -1,68 +1,163 @@
+"use client";
+
+import { useState } from "react";
+import { ArrowUpRightIcon, ArrowRightIcon } from "@/components/icons";
+
+type Category =
+  | "Eventos"
+  | "Fotografía"
+  | "Branding"
+  | "Diseño web"
+  | "Audiovisual"
+  | "Redes sociales";
+
 type WorkArea = {
   title: string;
   label: string;
+  category: Category;
   gradient: string;
+  /** relative tile height for the masonry rhythm */
+  span: "tall" | "short";
 };
+
+const filters: Array<Category | "Todos"> = [
+  "Todos",
+  "Eventos",
+  "Fotografía",
+  "Branding",
+  "Diseño web",
+  "Audiovisual",
+  "Redes sociales",
+];
 
 const workAreas: WorkArea[] = [
   {
     title: "Coberturas de eventos",
     label: "Sociales · Corporativos · Deportivos",
+    category: "Eventos",
     gradient: "bg-gradient-to-br from-[#3379e7] to-[#8b6ff0]",
+    span: "tall",
   },
   {
     title: "Foto Studio",
     label: "Fotografía comercial y corporativa",
-    gradient: "bg-gradient-to-br from-[#8b6ff0] to-[#3fd0e8]",
+    category: "Fotografía",
+    gradient: "bg-gradient-to-br from-[#8b6ff0] to-[#2f85c2]",
+    span: "short",
   },
   {
     title: "Branding",
     label: "Identidad corporativa",
+    category: "Branding",
     gradient: "bg-gradient-to-br from-[#4a3b94] to-[#3379e7]",
+    span: "short",
   },
   {
     title: "Diseño web",
     label: "Sitios y plataformas digitales",
-    gradient: "bg-gradient-to-br from-[#3fd0e8] to-[#3379e7]",
+    category: "Diseño web",
+    gradient: "bg-gradient-to-br from-[#2f85c2] to-[#3379e7]",
+    span: "tall",
   },
   {
     title: "Producción audiovisual",
     label: "Video y edición",
+    category: "Audiovisual",
     gradient: "bg-gradient-to-br from-[#8b6ff0] to-[#4a3b94]",
+    span: "tall",
   },
   {
     title: "Redes sociales",
     label: "Gestión y contenido",
-    gradient: "bg-gradient-to-br from-[#3379e7] to-[#3fd0e8]",
+    category: "Redes sociales",
+    gradient: "bg-gradient-to-br from-[#3379e7] to-[#2f85c2]",
+    span: "short",
   },
 ];
 
 export function ProjectsShowcase() {
-  return (
-    <section className="bg-transparent py-20 text-white">
-      <div className="mx-auto max-w-[1320px] px-5 md:px-10">
-        <h2 className="font-display text-[40px] leading-none tracking-tight">
-          Nuestro trabajo
-        </h2>
-        <p className="mt-4 text-[18px] text-white/60">
-          Áreas en las que damos vida a tu marca.
-        </p>
+  const [active, setActive] = useState<Category | "Todos">("Todos");
 
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {workAreas.map((area) => (
+  const visible = workAreas.filter(
+    (a) => active === "Todos" || a.category === active,
+  );
+
+  return (
+    <section className="bg-transparent pb-20 pt-6 text-white">
+      <div className="mx-auto max-w-[1320px] px-5 md:px-10">
+        {/* Header */}
+        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          <div>
+            <h2 className="font-display text-[clamp(36px,6vw,64px)] font-bold leading-[0.95] tracking-tight">
+              Nuestro trabajo
+            </h2>
+            <p className="mt-4 text-[18px] text-white/60">
+              Áreas en las que damos vida a tu marca.
+            </p>
+          </div>
+
+          <a
+            href="#cta"
+            className="group inline-flex shrink-0 items-center gap-4 self-start rounded-full border-2 border-[#2f85c2] py-2 pl-8 pr-2 text-[17px] font-bold text-white transition-colors hover:bg-[#2f85c2]/10 md:self-auto"
+          >
+            Contáctanos
+            <span className="grid h-11 w-11 place-items-center rounded-full bg-[#2f85c2] text-white transition-transform duration-300 group-hover:rotate-45">
+              <ArrowUpRightIcon className="h-5 w-5" />
+            </span>
+          </a>
+        </div>
+
+        {/* Filter tabs */}
+        <div className="mt-10 flex flex-wrap gap-3">
+          {filters.map((f) => {
+            const isActive = active === f;
+            return (
+              <button
+                key={f}
+                type="button"
+                onClick={() => setActive(f)}
+                className={`font-display rounded-full border px-6 py-2.5 text-[15px] font-semibold uppercase tracking-wide transition-colors ${
+                  isActive
+                    ? "border-white bg-white text-[#0e0730]"
+                    : "border-white/25 text-white/80 hover:border-white/60 hover:text-white"
+                }`}
+              >
+                {f}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Masonry gallery */}
+        <div className="mt-12 columns-1 gap-6 sm:columns-2 lg:columns-3">
+          {visible.map((area) => (
             <article
               key={area.title}
-              className="group block rounded-2xl transition-transform duration-300 ease-out hover:-translate-y-2"
+              className="group mb-6 block break-inside-avoid"
             >
               <div
-                className={`relative flex aspect-[4/3] w-full flex-col justify-end overflow-hidden rounded-2xl border border-white/10 p-6 ${area.gradient}`}
+                className={`relative flex w-full flex-col justify-end overflow-hidden border border-white/10 p-6 ${
+                  area.span === "tall" ? "aspect-[3/4]" : "aspect-[4/3]"
+                } ${area.gradient}`}
               >
-                <span className="text-[12px] font-medium uppercase tracking-wider text-white/80">
-                  {area.label}
-                </span>
-                <h3 className="font-display mt-1 text-[24px] leading-tight text-white">
-                  {area.title}
-                </h3>
+                {/* subtle darkening at the bottom for legibility */}
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
+                <div className="relative flex items-end justify-between gap-4">
+                  <div>
+                    <span className="text-[12px] font-medium uppercase tracking-wider text-white/80">
+                      {area.label}
+                    </span>
+                    <h3 className="font-display mt-1 text-[24px] leading-tight text-white">
+                      {area.title}
+                    </h3>
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-white/15 text-white opacity-0 transition-all duration-300 group-hover:bg-[#2f85c2] group-hover:text-white group-hover:opacity-100"
+                  >
+                    <ArrowRightIcon className="h-5 w-5 -rotate-45" />
+                  </span>
+                </div>
               </div>
             </article>
           ))}

@@ -20,7 +20,7 @@ export function ClientLogos() {
               key={pillar}
               className="flex items-center gap-2 rounded-full border border-white/15 px-5 py-2.5 text-[15px] text-white"
             >
-              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#3fd0e8]" />
+              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#2f85c2]" />
               {pillar}
             </span>
           ))}

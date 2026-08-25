@@ -58,7 +58,7 @@ export function SiteFooter() {
             </h2>
             <a
               href="mailto:niucom.ec@gmail.com"
-              className="group inline-flex shrink-0 items-center gap-2 rounded-full bg-[#3fd0e8] hover:bg-[#5cdcf0] px-7 py-4 text-[15px] font-semibold text-[#0e0730] transition-transform duration-300 hover:scale-[1.03]"
+              className="group inline-flex shrink-0 items-center gap-2 rounded-full bg-[#2f85c2] hover:bg-[#3f97d1] px-7 py-4 text-[15px] font-semibold text-white transition-transform duration-300 hover:scale-[1.03]"
             >
               Cotiza tu proyecto
               <ArrowUpRightIcon
@@ -114,7 +114,7 @@ export function SiteFooter() {
             <p className="text-[12px] text-white/40">
               © 2026 NIUCOM · Agencia de Marketing y Comunicación
             </p>
-            <p className="text-[12px] text-[#3fd0e8]/60">
+            <p className="text-[12px] text-[#2f85c2]/60">
               Conectamos creatividad con propósito
             </p>
           </div>

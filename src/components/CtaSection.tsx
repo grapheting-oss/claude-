@@ -29,7 +29,7 @@ export function CtaSection() {
     <section className="bg-transparent py-24">
       <div className="mx-auto max-w-[1320px] px-5 md:px-10">
         <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-10 md:p-14">
-          <span className="text-sm font-medium uppercase tracking-[0.2em] text-[#3fd0e8]">
+          <span className="text-sm font-medium uppercase tracking-[0.2em] text-[#2f85c2]">
             Contáctanos
           </span>
           <h2 className="font-display mt-4 max-w-4xl text-[clamp(36px,6vw,64px)] font-bold leading-[1.02] tracking-tight text-white">
@@ -43,7 +43,7 @@ export function CtaSection() {
           <div className="mt-10 flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
             <a
               href="mailto:niucom.ec@gmail.com"
-              className="group inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-[#3fd0e8] hover:bg-[#5cdcf0] px-8 py-4 font-medium text-[#0e0730] transition-transform duration-200 hover:scale-105"
+              className="group inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-[#2f85c2] hover:bg-[#3f97d1] px-8 py-4 font-medium text-white transition-transform duration-200 hover:scale-105"
             >
               Cotiza tu proyecto
               <ArrowUpRightIcon

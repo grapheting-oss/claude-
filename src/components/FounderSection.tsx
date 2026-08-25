@@ -50,7 +50,7 @@ export function FounderSection() {
 
           <a
             href="#cta"
-            className="group mt-9 inline-flex items-center gap-3 rounded-full bg-[#3fd0e8] py-3 pl-7 pr-3 text-base font-semibold text-[#0e0730] transition-colors hover:bg-[#5cdcf0]"
+            className="group mt-9 inline-flex items-center gap-3 rounded-full bg-[#2f85c2] py-3 pl-7 pr-3 text-base font-semibold text-white transition-colors hover:bg-[#3f97d1]"
           >
             Trabaja con nosotros
             <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/25 transition-transform group-hover:rotate-45">

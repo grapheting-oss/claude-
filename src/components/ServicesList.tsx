@@ -51,17 +51,7 @@ const services: Service[] = [
 
 export function ServicesList() {
   return (
-    <section className="bg-transparent py-24 text-white">
-      {/* Contained heading */}
-      <div className="mx-auto mb-14 max-w-[1320px] px-5 md:px-10">
-        <h2 className="font-display text-[48px] font-bold leading-[1.05] tracking-tight text-white">
-          Nuestros servicios
-        </h2>
-        <p className="mt-4 text-[18px] leading-relaxed text-white/60">
-          Soluciones creativas desde lo que tu marca realmente necesita.
-        </p>
-      </div>
-
+    <section className="bg-transparent pb-24 pt-4 text-white">
       {/* Full-width rows: dividers + hover band bleed edge-to-edge,
           content stays inside the centered container. */}
       <ul className="w-full border-b border-white/12">
@@ -73,7 +63,7 @@ export function ServicesList() {
             >
               <div className="mx-auto flex max-w-[1320px] items-center gap-5 px-5 py-7 md:gap-10 md:px-10">
                 <span
-                  className="font-display w-8 shrink-0 text-[20px] leading-none text-[#3fd0e8]"
+                  className="font-display w-8 shrink-0 text-[20px] leading-none text-[#2f85c2]"
                   aria-hidden="true"
                 >
                   {service.number}
@@ -90,7 +80,7 @@ export function ServicesList() {
 
                 <span
                   aria-hidden="true"
-                  className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-white/20 text-white/50 transition-all duration-300 group-hover:scale-110 group-hover:border-transparent group-hover:bg-[#3fd0e8] group-hover:text-[#0e0730] md:h-14 md:w-14"
+                  className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-white/20 text-white/50 transition-all duration-300 group-hover:scale-110 group-hover:border-transparent group-hover:bg-[#2f85c2] group-hover:text-white md:h-14 md:w-14"
                 >
                   <ArrowRightIcon className="h-5 w-5" />
                 </span>

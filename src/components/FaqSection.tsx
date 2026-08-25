@@ -80,7 +80,7 @@ export function FaqSection() {
                   </span>
                   <PlusIcon
                     aria-hidden="true"
-                    className={`h-5 w-5 shrink-0 text-[#3fd0e8] transition-transform duration-300 ${
+                    className={`h-5 w-5 shrink-0 text-[#2f85c2] transition-transform duration-300 ${
                       isOpen ? "rotate-45" : "rotate-0"
                     }`}
                   />
