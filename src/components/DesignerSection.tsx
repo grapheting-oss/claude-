@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { CreativeServices } from "@/components/CreativeServices";
 
 export function DesignerSection() {
   const ref = useRef<HTMLDivElement>(null);
@@ -66,12 +67,22 @@ export function DesignerSection() {
     <section ref={ref} className="relative z-10 mt-6 text-white md:mt-14">
       <div
         ref={panelRef}
-        className="relative overflow-hidden bg-[linear-gradient(to_bottom,#2f85c2_0%,#256ba0_82%,#256ba0_100%)] text-white"
+        className="relative overflow-hidden bg-[linear-gradient(to_bottom,#2f85c2_0px,#256ba0_720px,#256ba0_100%)] text-white"
         style={{
           borderTopLeftRadius: "50% 260px",
           borderTopRightRadius: "50% 260px",
         }}
       >
+      {/* single continuous grain over the whole blue zone */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-[1] opacity-[0.55] mix-blend-soft-light"
+        style={{
+          backgroundImage: "url(/images/grain.png)",
+          backgroundSize: "560px 560px",
+          backgroundRepeat: "repeat",
+        }}
+      />
       <div className="relative z-10 mx-auto grid max-w-[1320px] items-start gap-10 px-5 pb-8 pt-32 md:grid-cols-[1.05fr_0.95fr] md:gap-16 md:px-10 md:pb-10 md:pt-40">
         {/* Left: heading + info */}
         <div
@@ -154,6 +165,9 @@ export function DesignerSection() {
           </div>
         </div>
       </div>
+
+      {/* Services carousel — inside the same blue panel (no seam) */}
+      <CreativeServices />
       </div>
     </section>
   );

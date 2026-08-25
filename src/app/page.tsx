@@ -7,7 +7,6 @@ import { ServicesMarquee } from "@/components/ServicesMarquee";
 import { ServicesList } from "@/components/ServicesList";
 import { ProjectsShowcase } from "@/components/ProjectsShowcase";
 import { DesignerSection } from "@/components/DesignerSection";
-import { CreativeServices } from "@/components/CreativeServices";
 import { Testimonials } from "@/components/Testimonials";
 import { CtaSection } from "@/components/CtaSection";
 import { FaqSection } from "@/components/FaqSection";
@@ -32,7 +31,6 @@ export default function Home() {
           <ProjectsShowcase />
         </div>
         <DesignerSection />
-        <CreativeServices />
         <Testimonials />
         <div id="cta">
           <CtaSection />

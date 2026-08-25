@@ -132,13 +132,8 @@ export function CreativeServices() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-[#256ba0] pb-20 pt-2 text-white md:pb-24 md:pt-4">
-      {/* subtle depth toward the bottom (kept away from the top seam) */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-b from-transparent to-[#1b5081]"
-      />
-      <div className="relative z-10">
+    <div className="relative z-10 pb-20 pt-4 text-white md:pb-24 md:pt-8">
+      <div>
         {/* Header */}
         <div className="mx-auto max-w-[1320px] px-5 md:px-10">
           <span className="font-display text-[13px] font-semibold uppercase tracking-[0.28em] text-[#bcd8ee]">
@@ -200,6 +195,6 @@ export function CreativeServices() {
           </a>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
