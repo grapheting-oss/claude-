@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { PlusIcon } from "@/components/icons";
 
 type FaqItem = {
   question: string;
@@ -46,44 +45,52 @@ export function FaqSection() {
 
   return (
     <section className="bg-transparent py-24 text-white">
-      <div className="mx-auto max-w-[900px] px-5 md:px-10">
-        <div className="text-center">
-          <h2 className="font-display text-[clamp(32px,5vw,40px)] font-bold leading-[1.05] tracking-tight">
-            Preguntas frecuentes
+      <div className="mx-auto grid max-w-[1320px] gap-12 px-5 md:px-10 lg:grid-cols-[0.85fr_1.5fr] lg:gap-20">
+        {/* Left: heading + intro */}
+        <div>
+          <h2 className="font-display text-[clamp(34px,5vw,54px)] font-bold leading-[1.02] tracking-tight">
+            Preguntas
+            <br />
+            frecuentes (FAQ)
           </h2>
-          <p className="mt-4 text-[16px] text-white/60">
-            Resolvemos tus dudas antes de empezar.
+          <p className="mt-8 max-w-md text-[16px] leading-relaxed text-white/70">
+            <span className="font-semibold text-white">¿Tienes preguntas?</span>{" "}
+            ¡Tenemos respuestas! Explora nuestras preguntas frecuentes para
+            conocer más sobre nuestros servicios y cómo podemos hacer realidad
+            tu marca.
           </p>
         </div>
 
-        <div className="mt-14 flex flex-col gap-4">
+        {/* Right: accordion */}
+        <div className="border-b border-white/15">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             const panelId = `faq-panel-${index}`;
             const buttonId = `faq-button-${index}`;
 
             return (
-              <div
-                key={faq.question}
-                className="rounded-xl border border-white/15 bg-white/[0.02] transition-colors duration-300 hover:border-white/30"
-              >
+              <div key={faq.question} className="border-t border-white/15">
                 <button
                   type="button"
                   id={buttonId}
                   aria-expanded={isOpen}
                   aria-controls={panelId}
                   onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className="flex w-full items-center justify-between gap-6 px-6 py-5 text-left"
+                  className="group flex w-full items-center justify-between gap-6 py-6 text-left"
                 >
-                  <span className="text-[17px] font-medium leading-snug text-white">
+                  <span className="text-[clamp(18px,2.2vw,24px)] font-medium leading-snug text-white">
                     {faq.question}
                   </span>
-                  <PlusIcon
-                    aria-hidden="true"
-                    className={`h-5 w-5 shrink-0 text-[#2f85c2] transition-transform duration-300 ${
-                      isOpen ? "rotate-45" : "rotate-0"
-                    }`}
-                  />
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[#bcd8ee] text-[#123f73] transition-colors duration-300 group-hover:bg-white">
+                    <span className="relative block h-4 w-4">
+                      <span className="absolute left-0 top-1/2 h-[2.5px] w-4 -translate-y-1/2 rounded-full bg-current" />
+                      <span
+                        className={`absolute left-1/2 top-0 h-4 w-[2.5px] -translate-x-1/2 rounded-full bg-current transition-transform duration-300 ${
+                          isOpen ? "scale-y-0" : "scale-y-100"
+                        }`}
+                      />
+                    </span>
+                  </span>
                 </button>
 
                 <div
@@ -91,9 +98,9 @@ export function FaqSection() {
                   role="region"
                   aria-labelledby={buttonId}
                   hidden={!isOpen}
-                  className="px-6 pb-6"
+                  className="pb-7 pr-16"
                 >
-                  <p className="text-[15px] leading-relaxed text-white/60">
+                  <p className="text-[16px] leading-relaxed text-white/70">
                     {faq.answer}
                   </p>
                 </div>
