@@ -103,7 +103,7 @@ export function SiteFooter() {
             <img
               src="/images/niucom-logo.svg"
               alt="NIUCOM"
-              className="h-20 w-auto md:h-28 lg:h-36"
+              className="h-14 w-auto md:h-16 lg:h-20"
             />
             <div className="mt-10 flex flex-col gap-3 border-t border-white/10 pt-8 md:flex-row md:items-center md:justify-between">
               <p className="text-[13px] text-white/45">
