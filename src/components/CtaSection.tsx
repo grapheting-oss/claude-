@@ -14,10 +14,12 @@ export function CtaSection() {
               <span className="font-display text-[13px] font-semibold uppercase tracking-[0.28em] text-[#7fb2e6]">
                 Contáctanos
               </span>
-              <h2 className="font-display mt-5 text-[clamp(38px,6vw,72px)] font-bold leading-[1.0] tracking-tight text-white">
+              <h2 className="font-display mt-5 text-[clamp(32px,4.2vw,52px)] font-bold leading-[1.05] tracking-tight text-white">
                 ¿Listos para que
                 <br />
-                tu marca <span className={outline}>destaque</span>?
+                tu marca
+                <br />
+                <span className={outline}>destaque</span>?
               </h2>
 
               <div className="mt-10 flex flex-wrap items-center gap-6">
