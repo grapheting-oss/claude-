@@ -11,63 +11,43 @@ type ServiceBlock = {
 
 const blocks: ServiceBlock[] = [
   {
-    title: "Marketing digital y redes sociales",
-    gradient: "from-[#3379e7] to-[#8b6ff0]",
-    items: [
-      "Gestión de redes sociales",
-      "Estrategia de contenidos",
-      "Marketing para marcas y emprendimientos",
-      "Plataformas digitales y automatización",
-    ],
-  },
-  {
-    title: "Campañas y pauta digital",
-    gradient: "from-[#8b6ff0] to-[#2f85c2]",
-    items: [
-      "Google Ads · Meta · TikTok",
-      "Segmentación de audiencias",
-      "Seguimiento de KPIs y ROI",
-      "Diseño y publicación de anuncios",
-    ],
-  },
-  {
-    title: "Diseño gráfico y branding",
+    title: "Identidad y branding",
     gradient: "from-[#4a3b94] to-[#3379e7]",
     items: [
-      "Identidad corporativa (branding)",
-      "Diseño para redes sociales",
-      "Diseño editorial (catálogos, folletos)",
-      "Presentaciones corporativas",
+      "Diseño de identidad corporativa",
+      "Logotipo y sistema visual",
+      "Manual de marca",
+      "Papelería corporativa",
     ],
   },
   {
-    title: "Diseño y producción audiovisual",
+    title: "Diseño para redes sociales",
+    gradient: "from-[#3379e7] to-[#8b6ff0]",
+    items: [
+      "Piezas y plantillas para redes",
+      "Línea gráfica de contenido",
+      "Campañas y anuncios gráficos",
+      "Historias, reels y carruseles",
+    ],
+  },
+  {
+    title: "Diseño editorial e impresos",
+    gradient: "from-[#8b6ff0] to-[#2f85c2]",
+    items: [
+      "Catálogos y folletos",
+      "Brochures y revistas",
+      "Material impreso y digital",
+      "Piezas promocionales",
+    ],
+  },
+  {
+    title: "Audiovisual y presentaciones",
     gradient: "from-[#2f85c2] to-[#3379e7]",
     items: [
-      "Fotografía y grabación de video",
-      "Edición fotográfica y de video",
-      "Contenido para redes sociales",
-      "Piezas publicitarias y maquetación",
-    ],
-  },
-  {
-    title: "Diseño y desarrollo web",
-    gradient: "from-[#8b6ff0] to-[#4a3b94]",
-    items: [
-      "Sitios y plataformas a medida",
-      "Automatización de procesos",
-      "Material impreso y digital",
-      "Comunicación corporativa",
-    ],
-  },
-  {
-    title: "Publicidad impresa y textil",
-    gradient: "from-[#3379e7] to-[#2f85c2]",
-    items: [
-      "Flyers · roll up · rótulos en lona",
-      "Serigrafía y DTF full color",
-      "Camisetas · gorras · uniformes",
-      "Artículos promocionales",
+      "Edición de video para redes",
+      "Presentaciones corporativas",
+      "Motion graphics y animación",
+      "Contenido multimedia",
     ],
   },
 ];
@@ -137,10 +117,10 @@ export function CreativeServices() {
         {/* Header */}
         <div className="mx-auto max-w-[1320px] px-5 md:px-10">
           <span className="font-display text-[13px] font-semibold uppercase tracking-[0.28em] text-[#bcd8ee]">
-            Nuestros servicios
+            Servicios de diseño
           </span>
           <h2 className="font-display mt-3 text-[clamp(34px,5vw,60px)] font-bold leading-[0.98] tracking-tight">
-            Todo lo que hacemos
+            Diseño que habla
             <br className="hidden md:block" /> por tu marca
           </h2>
         </div>
