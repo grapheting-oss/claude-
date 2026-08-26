@@ -30,10 +30,13 @@ export default function Home() {
           <ProjectsShowcase />
         </div>
         <DesignerSection />
-        <div id="cta">
-          <CtaSection />
+        {/* Blue zone continues to the bottom of the page */}
+        <div className="bg-gradient-to-b from-[#256ba0] to-[#153f66]">
+          <div id="cta">
+            <CtaSection />
+          </div>
+          <FaqSection />
         </div>
-        <FaqSection />
       </main>
       <SiteFooter />
     </>

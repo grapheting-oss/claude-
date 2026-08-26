@@ -7,8 +7,8 @@ export function CtaSection() {
   return (
     <section className="bg-transparent py-24">
       <div className="mx-auto max-w-[1320px] px-5 md:px-10">
-        <div className="rounded-[2.5rem] border border-white/10 bg-white/[0.04] p-8 md:p-14 lg:p-16">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="rounded-[2.5rem] border border-white/12 bg-white/[0.06] p-8 md:p-14 lg:p-16">
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
             {/* Left */}
             <div>
               <span className="font-display text-[13px] font-semibold uppercase tracking-[0.28em] text-[#7fb2e6]">
@@ -43,7 +43,7 @@ export function CtaSection() {
             </div>
 
             {/* Right */}
-            <div className="lg:pt-2">
+            <div>
               <p className="text-[17px] leading-relaxed text-white/75">
                 ¿Tienes una idea en mente? Cuéntanos qué necesita tu marca y
                 creamos juntos una{" "}

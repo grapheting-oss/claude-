@@ -53,9 +53,9 @@ const columns: FooterColumn[] = [
 
 export function SiteFooter() {
   return (
-    <footer className="bg-transparent text-white">
+    <footer className="bg-[#153f66] text-white">
       <div className="mx-auto max-w-[1320px] px-5 md:px-10">
-        <div className="overflow-hidden rounded-t-[2.5rem] bg-[#1e1150] px-6 pb-10 pt-20 md:px-12">
+        <div className="overflow-hidden rounded-t-[2.5rem] bg-[#0f3a5e] px-6 pb-10 pt-20 md:px-12">
           {/* CTA */}
           <div className="flex flex-col items-start gap-10 lg:flex-row lg:items-center lg:justify-between">
             <h2 className="font-display max-w-3xl text-[clamp(34px,6vw,68px)] font-bold leading-[1.02] tracking-tight text-white">
