@@ -5,7 +5,7 @@ export function CtaSection() {
     "text-transparent [-webkit-text-stroke:1.5px_rgba(255,255,255,0.85)]";
 
   return (
-    <section className="bg-transparent py-24">
+    <section className="bg-transparent py-12">
       <div className="mx-auto max-w-[1320px] px-5 md:px-10">
         <div className="rounded-[2.5rem] border border-white/12 bg-white/[0.06] p-8 md:p-14 lg:p-16">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
