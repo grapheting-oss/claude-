@@ -13,41 +13,49 @@ const services: Service[] = [
     title: "Marketing estratégico",
     description: "Estrategias que impulsan el crecimiento de tu marca.",
     gradient: "from-[#3379e7] to-[#8b6ff0]",
+    image: "/images/services/s1.jpg",
   },
   {
     title: "Gestión de redes sociales",
     description: "Contenido y comunidad que conectan con tu audiencia.",
     gradient: "from-[#8b6ff0] to-[#2f85c2]",
+    image: "/images/services/s2.jpg",
   },
   {
     title: "Pauta y campañas digitales",
     description: "Google Ads, Meta y TikTok con seguimiento de KPIs y ROI.",
     gradient: "from-[#2f85c2] to-[#3379e7]",
+    image: "/images/services/s3.jpg",
   },
   {
     title: "Diseño y desarrollo web",
     description: "Sitios y plataformas a la medida de tu marca.",
     gradient: "from-[#4a3b94] to-[#3379e7]",
+    image: "/images/services/s4.jpg",
   },
   {
     title: "Producción audiovisual",
     description: "Fotografía, video y edición profesional.",
     gradient: "from-[#8b6ff0] to-[#4a3b94]",
+    image: "/images/services/s5.jpg",
   },
   {
     title: "Diseño gráfico y branding",
     description: "Identidad corporativa y piezas que hablan por tu marca.",
     gradient: "from-[#3379e7] to-[#2f85c2]",
+    image: "/images/services/s6.jpg",
   },
   {
     title: "Comunicación corporativa",
     description: "Mensajes claros que construyen confianza y reputación.",
     gradient: "from-[#2f85c2] to-[#8b6ff0]",
+    image: "/images/services/s7.jpg",
   },
   {
     title: "Consultoría en marketing",
     description: "Acompañamiento estratégico para mejores decisiones.",
     gradient: "from-[#4a3b94] to-[#8b6ff0]",
+    image: "/images/services/s8.jpg",
   },
 ];
 
