@@ -55,7 +55,7 @@ export function HeroSection() {
       <div className="pointer-events-none absolute bottom-0 left-1/4 h-[440px] w-[440px] rounded-full bg-[#8b6ff0]/20 blur-[140px]" />
 
       <div className="relative mx-auto w-full max-w-[1320px] px-5 pt-36 pb-24 md:px-10 md:pt-40 md:pb-28">
-        <h1 className="max-w-5xl font-display text-6xl font-semibold leading-[0.95] text-white sm:text-7xl md:text-8xl lg:text-[104px] xl:text-[120px]">
+        <h1 className="max-w-5xl font-display text-5xl font-semibold leading-[0.95] text-white sm:text-6xl md:text-7xl lg:text-[84px] xl:text-[96px]">
           Conectamos creatividad con{" "}
           <span className="relative inline-block">
             propósito
@@ -76,7 +76,7 @@ export function HeroSection() {
           </span>
         </h1>
 
-        <p className="mt-20 max-w-xl text-lg text-white/75 md:mt-28 md:text-xl">
+        <p className="mt-16 max-w-xl text-lg text-white/75 md:mt-20 md:text-xl">
           Te ayudamos a crear soluciones creativas desde lo que tu marca
           realmente necesita. Transformamos ideas en resultados.
         </p>

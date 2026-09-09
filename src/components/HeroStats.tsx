@@ -68,7 +68,7 @@ export function HeroStats() {
             i > 0 ? "sm:border-l sm:border-white/20 sm:pl-8" : ""
           }`}
         >
-          <div className="font-display text-[clamp(34px,4vw,52px)] font-bold leading-none tracking-tight text-white">
+          <div className="font-display text-[clamp(42px,5vw,68px)] font-bold leading-none tracking-tight text-white">
             +{vals[i]}
           </div>
           <div className="mt-2.5 text-[12px] font-medium uppercase tracking-[0.14em] text-white/55">
