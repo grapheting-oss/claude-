@@ -4,7 +4,7 @@ import { HeroSection } from "@/components/HeroSection";
 import { FounderSection } from "@/components/FounderSection";
 import { QuoteBanner } from "@/components/QuoteBanner";
 import { ServicesMarquee } from "@/components/ServicesMarquee";
-import { ServicesList } from "@/components/ServicesList";
+import { ServicesGrid } from "@/components/ServicesGrid";
 import { ProjectsShowcase } from "@/components/ProjectsShowcase";
 import { DesignerSection } from "@/components/DesignerSection";
 import { CtaSection } from "@/components/CtaSection";
@@ -18,14 +18,14 @@ export default function Home() {
       <SiteHeader />
       <main className="flex-1">
         <HeroSection />
+        <ServicesMarquee />
+        <div id="services">
+          <ServicesGrid />
+        </div>
         <div id="about">
           <FounderSection />
         </div>
         <QuoteBanner />
-        <ServicesMarquee />
-        <div id="services">
-          <ServicesList />
-        </div>
         <div id="work">
           <ProjectsShowcase />
         </div>
