@@ -1,4 +1,5 @@
 import { ArrowUpRightIcon } from "@/components/icons";
+import { HeroStats } from "@/components/HeroStats";
 
 function InstagramIcon() {
   return (
@@ -97,6 +98,8 @@ export function HeroSection() {
             Ver servicios
           </a>
         </div>
+
+        <HeroStats />
       </div>
 
       {/* Vertical "Síguenos" social rail */}
