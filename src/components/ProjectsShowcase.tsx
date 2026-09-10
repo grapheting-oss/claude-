@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowUpRightIcon, ArrowRightIcon } from "@/components/icons";
+import { ArrowRightIcon, WhatsAppIcon } from "@/components/icons";
 
 type Category =
   | "Eventos"
@@ -97,12 +97,14 @@ export function ProjectsShowcase() {
           </div>
 
           <a
-            href="#cta"
+            href="https://wa.me/593987245860"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex shrink-0 items-center gap-4 self-start rounded-full border-2 border-[#2f85c2] py-2 pl-8 pr-2 text-[17px] font-bold text-white transition-colors hover:bg-[#2f85c2]/10 md:self-auto"
           >
             Contáctanos
-            <span className="grid h-11 w-11 place-items-center rounded-full bg-[#2f85c2] text-white transition-transform duration-300 group-hover:rotate-45">
-              <ArrowUpRightIcon className="h-5 w-5" />
+            <span className="grid h-11 w-11 place-items-center rounded-full bg-[#25D366] text-white transition-transform duration-300 group-hover:scale-110">
+              <WhatsAppIcon className="h-6 w-6" />
             </span>
           </a>
         </div>

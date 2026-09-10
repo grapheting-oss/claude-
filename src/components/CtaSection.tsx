@@ -1,4 +1,4 @@
-import { ArrowUpRightIcon } from "@/components/icons";
+import { ArrowUpRightIcon, WhatsAppIcon } from "@/components/icons";
 
 export function CtaSection() {
   const outline =
@@ -11,7 +11,8 @@ export function CtaSection() {
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
             {/* Left */}
             <div>
-              <span className="font-display text-[13px] font-semibold uppercase tracking-[0.28em] text-[#7fb2e6]">
+              <span className="inline-flex items-center gap-2 font-display text-[13px] font-semibold uppercase tracking-[0.28em] text-[#7fb2e6]">
+                <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
                 Contáctanos
               </span>
               <h2 className="font-display mt-5 text-[clamp(32px,4.2vw,52px)] font-bold leading-[1.05] tracking-tight text-white">
