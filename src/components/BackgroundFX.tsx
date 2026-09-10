@@ -2,30 +2,17 @@
 
 import { useEffect, useRef } from "react";
 
-type Dot = {
+type Point = {
   x: number;
   y: number;
-  r: number;
   vx: number;
   vy: number;
-  a: number;
-  soft: boolean;
-  tint: [number, number, number];
 };
-type Spark = { x: number; y: number; life: number; maxLife: number; maxR: number; tint: [number, number, number] };
-
-const TINTS: [number, number, number][] = [
-  [240, 244, 255],
-  [240, 244, 255],
-  [240, 244, 255],
-  [120, 220, 240],
-  [175, 165, 250],
-];
 
 /**
- * Ambient particle "dust" (tiny drifting points, like a subtle starfield) plus
- * a grain overlay — inspired by design.odoo.com. Moving the cursor spawns a few
- * small soft sparks along its path.
+ * Interconnected "constellation" network: drifting points linked by lines
+ * whenever they're close, plus links to the cursor. A subtle grain overlay
+ * sits on top. Respects prefers-reduced-motion.
  */
 export function BackgroundFX() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -35,28 +22,16 @@ export function BackgroundFX() {
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
     let w = 0;
     let h = 0;
-    let dots: Dot[] = [];
-    const sparks: Spark[] = [];
+    let points: Point[] = [];
+    const mouse = { x: -9999, y: -9999 };
 
     const rand = (a: number, b: number) => a + Math.random() * (b - a);
-    const makeDot = (seed = false): Dot => {
-      const soft = Math.random() < 0.12; // few soft bokeh, rest tiny points
-      return {
-        x: rand(0, w),
-        y: seed ? rand(0, h) : h + rand(0, 40),
-        r: soft ? rand(2.5, 5) : rand(0.4, 1.6),
-        vx: rand(-0.06, 0.06),
-        vy: rand(-0.28, -0.06),
-        a: soft ? rand(0.06, 0.12) : rand(0.3, 0.75),
-        soft,
-        tint: TINTS[(Math.random() * TINTS.length) | 0],
-      };
-    };
 
     const resize = () => {
       w = window.innerWidth;
@@ -64,92 +39,107 @@ export function BackgroundFX() {
       canvas.width = Math.floor(w * dpr);
       canvas.height = Math.floor(h * dpr);
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      const target = Math.min(Math.round((w * h) / 9000), 260);
-      dots = Array.from({ length: target }, () => makeDot(true));
+      const target = Math.min(Math.round((w * h) / 15000), 120);
+      points = Array.from({ length: target }, () => ({
+        x: rand(0, w),
+        y: rand(0, h),
+        vx: rand(-0.25, 0.25),
+        vy: rand(-0.25, 0.25),
+      }));
     };
     resize();
     window.addEventListener("resize", resize);
 
-    let lastX = 0;
-    let lastY = 0;
     const onMove = (e: PointerEvent) => {
-      const dx = e.clientX - lastX;
-      const dy = e.clientY - lastY;
-      if (dx * dx + dy * dy > 600 && sparks.length < 50) {
-        sparks.push({
-          x: e.clientX + rand(-6, 6),
-          y: e.clientY + rand(-6, 6),
-          life: 0,
-          maxLife: rand(35, 60),
-          maxR: rand(3, 9),
-          tint: TINTS[(Math.random() * TINTS.length) | 0],
-        });
-        lastX = e.clientX;
-        lastY = e.clientY;
-      }
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
     };
-    if (!reduce) window.addEventListener("pointermove", onMove, { passive: true });
+    const onLeave = () => {
+      mouse.x = -9999;
+      mouse.y = -9999;
+    };
+    if (!reduce) {
+      window.addEventListener("pointermove", onMove, { passive: true });
+      window.addEventListener("pointerleave", onLeave);
+    }
 
-    const softCircle = (x: number, y: number, r: number, [cr, cg, cb]: number[], alpha: number) => {
-      const g = ctx.createRadialGradient(x, y, 0, x, y, r);
-      g.addColorStop(0, `rgba(${cr},${cg},${cb},${alpha})`);
-      g.addColorStop(1, `rgba(${cr},${cg},${cb},0)`);
-      ctx.fillStyle = g;
-      ctx.beginPath();
-      ctx.arc(x, y, r, 0, Math.PI * 2);
-      ctx.fill();
-    };
+    const LINK = 132; // px — max distance to connect two points
+    const LINK2 = LINK * LINK;
+    const MLINK = 180; // px — max distance to connect to the cursor
+    const MLINK2 = MLINK * MLINK;
 
     let raf = 0;
-    const easeOut = (t: number) => 1 - Math.pow(1 - t, 2);
-    const drawDots = () => {
-      for (const d of dots) {
-        const [cr, cg, cb] = d.tint;
-        if (d.soft) {
-          softCircle(d.x, d.y, d.r, d.tint, d.a);
-        } else {
-          ctx.fillStyle = `rgba(${cr},${cg},${cb},${d.a})`;
-          ctx.beginPath();
-          ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
-          ctx.fill();
-        }
-      }
-    };
-    const render = () => {
+    const step = () => {
       ctx.clearRect(0, 0, w, h);
-      for (const d of dots) {
-        d.x += d.vx;
-        d.y += d.vy;
-        if (d.y + d.r < -10) Object.assign(d, makeDot(false));
-        if (d.x < -20) d.x = w + 20;
-        else if (d.x > w + 20) d.x = -20;
+
+      for (const p of points) {
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < -20) p.x = w + 20;
+        else if (p.x > w + 20) p.x = -20;
+        if (p.y < -20) p.y = h + 20;
+        else if (p.y > h + 20) p.y = -20;
       }
-      drawDots();
-      for (let i = sparks.length - 1; i >= 0; i--) {
-        const s = sparks[i];
-        s.life++;
-        const p = s.life / s.maxLife;
-        if (p >= 1) {
-          sparks.splice(i, 1);
-          continue;
+
+      // links between points + to the cursor
+      for (let i = 0; i < points.length; i++) {
+        const a = points[i];
+        for (let j = i + 1; j < points.length; j++) {
+          const b = points[j];
+          const dx = a.x - b.x;
+          const dy = a.y - b.y;
+          const d2 = dx * dx + dy * dy;
+          if (d2 < LINK2) {
+            const alpha = (1 - d2 / LINK2) * 0.16;
+            ctx.strokeStyle = `rgba(150,180,255,${alpha})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.stroke();
+          }
         }
-        softCircle(s.x, s.y, s.maxR * easeOut(p), s.tint, (1 - p) * 0.35);
+        const mdx = a.x - mouse.x;
+        const mdy = a.y - mouse.y;
+        const md2 = mdx * mdx + mdy * mdy;
+        if (md2 < MLINK2) {
+          const alpha = (1 - md2 / MLINK2) * 0.32;
+          ctx.strokeStyle = `rgba(120,208,255,${alpha})`;
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.stroke();
+        }
       }
-      raf = requestAnimationFrame(render);
+
+      // points
+      for (const p of points) {
+        ctx.fillStyle = "rgba(205,218,255,0.6)";
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 1.5, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      if (!reduce) raf = requestAnimationFrame(step);
     };
-    if (!reduce) render();
-    else drawDots();
+    step();
 
     return () => {
       cancelAnimationFrame(raf);
       window.removeEventListener("resize", resize);
       window.removeEventListener("pointermove", onMove);
+      window.removeEventListener("pointerleave", onLeave);
     };
   }, []);
 
   return (
     <div className="pointer-events-none fixed inset-0 -z-10">
-      <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" aria-hidden="true" />
+      <canvas
+        ref={canvasRef}
+        className="absolute inset-0 h-full w-full"
+        aria-hidden="true"
+      />
       <div
         aria-hidden="true"
         className="absolute inset-0 opacity-[0.6] mix-blend-soft-light"
