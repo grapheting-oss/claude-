@@ -12,7 +12,7 @@ export function CtaSection() {
             {/* Left */}
             <div>
               <span className="inline-flex items-center gap-2 font-display text-[13px] font-semibold uppercase tracking-[0.28em] text-[#7fb2e6]">
-                <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
+                <WhatsAppIcon className="h-4 w-4 text-white" />
                 Contáctanos
               </span>
               <h2 className="font-display mt-5 text-[clamp(32px,4.2vw,52px)] font-bold leading-[1.05] tracking-tight text-white">
