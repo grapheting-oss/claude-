@@ -16,6 +16,7 @@ type WorkArea = {
   label: string;
   category: Category;
   gradient: string;
+  image?: string;
   /** relative tile height for the masonry rhythm */
   span: "tall" | "short";
 };
@@ -36,6 +37,7 @@ const workAreas: WorkArea[] = [
     label: "Sociales · Corporativos · Deportivos",
     category: "Eventos",
     gradient: "bg-gradient-to-br from-[#3379e7] to-[#8b6ff0]",
+    image: "/images/work/w1.jpg",
     span: "tall",
   },
   {
@@ -43,6 +45,7 @@ const workAreas: WorkArea[] = [
     label: "Fotografía comercial y corporativa",
     category: "Fotografía",
     gradient: "bg-gradient-to-br from-[#8b6ff0] to-[#2f85c2]",
+    image: "/images/work/w2.jpg",
     span: "short",
   },
   {
@@ -50,6 +53,7 @@ const workAreas: WorkArea[] = [
     label: "Identidad corporativa",
     category: "Branding",
     gradient: "bg-gradient-to-br from-[#4a3b94] to-[#3379e7]",
+    image: "/images/work/w3.jpg",
     span: "short",
   },
   {
@@ -57,6 +61,7 @@ const workAreas: WorkArea[] = [
     label: "Sitios y plataformas digitales",
     category: "Diseño web",
     gradient: "bg-gradient-to-br from-[#2f85c2] to-[#3379e7]",
+    image: "/images/work/w4.jpg",
     span: "tall",
   },
   {
@@ -64,6 +69,7 @@ const workAreas: WorkArea[] = [
     label: "Video y edición",
     category: "Audiovisual",
     gradient: "bg-gradient-to-br from-[#8b6ff0] to-[#4a3b94]",
+    image: "/images/work/w5.jpg",
     span: "tall",
   },
   {
@@ -71,6 +77,7 @@ const workAreas: WorkArea[] = [
     label: "Gestión y contenido",
     category: "Redes sociales",
     gradient: "bg-gradient-to-br from-[#3379e7] to-[#2f85c2]",
+    image: "/images/work/w6.jpg",
     span: "short",
   },
 ];
@@ -83,7 +90,7 @@ export function ProjectsShowcase() {
   );
 
   return (
-    <section className="bg-transparent pb-20 pt-6 text-white">
+    <section className="bg-transparent pb-20 pt-24 text-white">
       <div className="mx-auto max-w-[1320px] px-5 md:px-10">
         {/* Header */}
         <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
@@ -142,8 +149,17 @@ export function ProjectsShowcase() {
                   area.span === "tall" ? "aspect-[3/4]" : "aspect-[4/3]"
                 } ${area.gradient}`}
               >
-                {/* subtle darkening at the bottom for legibility */}
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
+                {/* photo */}
+                {area.image && (
+                  <img
+                    src={area.image}
+                    alt={area.title}
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                )}
+                {/* darkening for legibility */}
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/10" />
                 <div className="relative flex items-end justify-between gap-4">
                   <div>
                     <span className="text-[12px] font-medium uppercase tracking-wider text-white/80">

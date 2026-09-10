@@ -185,3 +185,27 @@
 @media (prefers-reduced-motion: reduce) {
   .niu-slide-track { animation: none; }
 }
+
+/* Hero creative decoration */
+@keyframes niu-spin { to { transform: rotate(360deg); } }
+@keyframes niu-spin-rev { to { transform: rotate(-360deg); } }
+@keyframes niu-float {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-22px) translateX(10px); }
+}
+@keyframes niu-float2 {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(18px) translateX(-14px); }
+}
+@keyframes niu-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.12); opacity: 0.8; }
+}
+.niu-spin { animation: niu-spin 26s linear infinite; }
+.niu-spin-rev { animation: niu-spin-rev 34s linear infinite; }
+.niu-float { animation: niu-float 7s ease-in-out infinite; }
+.niu-float2 { animation: niu-float2 9s ease-in-out infinite; }
+.niu-pulse { animation: niu-pulse 6s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .niu-spin, .niu-spin-rev, .niu-float, .niu-float2, .niu-pulse { animation: none; }
+}

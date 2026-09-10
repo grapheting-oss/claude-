@@ -54,6 +54,26 @@ export function HeroSection() {
       <div className="pointer-events-none absolute -right-20 top-1/4 h-[560px] w-[560px] rounded-full bg-[#2f85c2]/20 blur-[150px]" />
       <div className="pointer-events-none absolute bottom-0 left-1/4 h-[440px] w-[440px] rounded-full bg-[#8b6ff0]/20 blur-[140px]" />
 
+      {/* Creative animated decoration (right side, behind the text) */}
+      <div className="pointer-events-none absolute right-[4%] top-1/2 hidden aspect-square w-[36vw] max-w-[500px] -translate-y-1/2 md:block">
+        {/* rotating rings */}
+        <div className="niu-spin absolute inset-0 rounded-full border-2 border-dashed border-white/25" />
+        <div className="niu-spin-rev absolute inset-[13%] rounded-full border border-white/20" />
+        {/* orbiting dots */}
+        <div className="niu-spin absolute inset-0">
+          <span className="absolute left-1/2 top-0 h-4 w-4 -translate-x-1/2 rounded-full bg-[#3fd0e8] shadow-[0_0_26px_rgba(63,208,232,0.95)]" />
+        </div>
+        <div className="niu-spin-rev absolute inset-[13%]">
+          <span className="absolute left-0 top-1/2 h-3 w-3 -translate-y-1/2 rounded-full bg-[#8b6ff0] shadow-[0_0_18px_rgba(139,111,240,0.9)]" />
+        </div>
+        {/* pulsing gradient core */}
+        <div className="niu-pulse absolute inset-[24%] rounded-full bg-gradient-to-br from-[#2f85c2] to-[#8b6ff0] blur-xl" />
+        {/* floating shapes */}
+        <div className="niu-float absolute left-[2%] top-[12%] h-20 w-20 rounded-[1.6rem] bg-gradient-to-br from-[#3fd0e8]/70 to-[#2f85c2]/50 blur-[1px]" />
+        <div className="niu-float2 absolute bottom-[10%] right-[0%] h-14 w-14 rounded-full bg-[#8b6ff0]/60" />
+        <div className="niu-float absolute right-[14%] top-[4%] h-5 w-5 rounded-full bg-[#3fd0e8]/80" />
+      </div>
+
       <div className="relative mx-auto w-full max-w-[1320px] px-5 pt-36 pb-24 md:px-10 md:pt-40 md:pb-28">
         <h1 className="max-w-5xl font-display text-5xl font-semibold leading-[0.95] text-white sm:text-6xl md:text-7xl lg:text-[84px] xl:text-[96px]">
           Conectamos creatividad con{" "}
