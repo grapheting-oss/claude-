@@ -8,6 +8,7 @@ import { ServicesMarquee } from "@/components/ServicesMarquee";
 import { ServicesGrid } from "@/components/ServicesGrid";
 import { ProjectsShowcase } from "@/components/ProjectsShowcase";
 import { DesignerSection } from "@/components/DesignerSection";
+import { ClientTestimonials } from "@/components/ClientTestimonials";
 import { CtaSection } from "@/components/CtaSection";
 import { FaqSection } from "@/components/FaqSection";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -32,6 +33,7 @@ export default function Home() {
           <ProjectsShowcase />
         </div>
         <DesignerSection />
+        <ClientTestimonials />
         {/* Blue zone continues to the bottom of the page */}
         <div className="bg-gradient-to-b from-[#256ba0] to-[#153f66]">
           <div id="cta">
