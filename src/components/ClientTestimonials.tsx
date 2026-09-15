@@ -2,6 +2,7 @@ type Testimonial = {
   quote: string;
   name: string;
   initials: string;
+  photo: string;
   role: string;
   company: string;
 };
@@ -13,6 +14,7 @@ const TESTIMONIALS: Testimonial[] = [
       "Llegamos con una idea difusa de lo que queríamos y salimos con una marca que por fin se parece a nosotros. Lo que más valoro es que preguntaron mucho antes de proponer nada.",
     name: "Mariana Escobar",
     initials: "ME",
+    photo: "/images/testimonials/t1.jpg",
     role: "Gerente de Marca",
     company: "Grupo Andes",
   },
@@ -21,6 +23,7 @@ const TESTIMONIALS: Testimonial[] = [
       "Pasamos de publicar por publicar a tener una estrategia con cabeza. En seis meses las consultas por redes se volvieron nuestra principal fuente de clientes nuevos.",
     name: "Diego Salazar",
     initials: "DS",
+    photo: "/images/testimonials/t2.jpg",
     role: "Director Comercial",
     company: "Vértice Logística",
   },
@@ -29,6 +32,7 @@ const TESTIMONIALS: Testimonial[] = [
       "Trabajar con NIUCOM fue fácil en el mejor sentido: plazos claros, entregas a tiempo y gente que responde. Para un equipo pequeño como el nuestro, eso vale oro.",
     name: "Carolina Vallejo",
     initials: "CV",
+    photo: "/images/testimonials/t3.jpg",
     role: "Coordinadora de Comunicación",
     company: "Fundación Raíces",
   },
@@ -37,6 +41,7 @@ const TESTIMONIALS: Testimonial[] = [
       "No tenía presupuesto de agencia grande y aun así me trataron como si lo tuviera. El material del lanzamiento nos dejó la tienda llena la primera semana.",
     name: "Andrés Paredes",
     initials: "AP",
+    photo: "/images/testimonials/t4.jpg",
     role: "Fundador",
     company: "Cafetería Origen",
   },
@@ -45,6 +50,7 @@ const TESTIMONIALS: Testimonial[] = [
       "El video institucional superó lo que teníamos en la cabeza. Entendieron el tono exacto que necesitábamos: serio pero cercano, sin caer en lo frío.",
     name: "Paulina Ríos",
     initials: "PR",
+    photo: "/images/testimonials/t5.jpg",
     role: "Jefa de Marketing",
     company: "Clínica Vitalis",
   },
@@ -53,6 +59,7 @@ const TESTIMONIALS: Testimonial[] = [
       "Nos rediseñaron toda la línea gráfica sin perder lo que la gente ya reconocía de nosotros. Ese equilibrio era justo lo difícil y lo resolvieron bien.",
     name: "Sebastián Nájera",
     initials: "SN",
+    photo: "/images/testimonials/t6.jpg",
     role: "Gerente General",
     company: "Distribuidora Litoral",
   },
@@ -61,6 +68,7 @@ const TESTIMONIALS: Testimonial[] = [
       "Lo que más me sorprendió fue el seguimiento después de entregar. Siguen pendientes de cómo nos va, y eso no lo había visto en otras agencias.",
     name: "Gabriela Mena",
     initials: "GM",
+    photo: "/images/testimonials/t7.jpg",
     role: "Directora de Proyectos",
     company: "Constructora Sur",
   },
@@ -69,6 +77,7 @@ const TESTIMONIALS: Testimonial[] = [
       "Les pedí algo urgente para una feria y lo resolvieron en tres días sin bajar la calidad. Desde ahí son nuestro equipo de cabecera.",
     name: "Iván Cordero",
     initials: "IC",
+    photo: "/images/testimonials/t8.jpg",
     role: "Jefe de Ventas",
     company: "Textiles Nuvo",
   },
@@ -94,12 +103,13 @@ function Card({ t }: { t: Testimonial }) {
           </div>
         </div>
 
-        <span
-          aria-hidden
-          className="grid h-14 w-14 shrink-0 place-items-center rounded-full border border-white/25 bg-white/15 text-[14px] font-bold text-white"
-        >
-          {t.initials}
-        </span>
+        <img
+          src={t.photo}
+          alt=""
+          draggable={false}
+          loading="lazy"
+          className="h-14 w-14 shrink-0 rounded-full border border-white/25 object-cover"
+        />
       </figcaption>
     </figure>
   );
