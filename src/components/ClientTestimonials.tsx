@@ -127,7 +127,7 @@ function Row({
 
 export function ClientTestimonials() {
   return (
-    <section className="bg-[#256ba0] py-24 text-white md:py-28">
+    <section className="bg-[#256ba0] pb-24 pt-8 text-white md:pb-28 md:pt-10">
       <h2 className="font-display mx-auto max-w-[1320px] px-5 text-center text-[clamp(32px,4.4vw,56px)] font-bold leading-tight tracking-tight md:px-10">
         La voz de nuestros clientes
       </h2>
