@@ -48,7 +48,7 @@ export function HeroMedia() {
   return (
     <>
       {/* Decoration sits clear of both the headline and the social rail */}
-      <div className="pointer-events-none absolute right-[11%] top-1/2 hidden aspect-square w-[30vw] max-w-[440px] -translate-y-1/2 xl:block">
+      <div className="pointer-events-none absolute right-[10%] top-1/2 z-20 hidden aspect-square w-[38vw] max-w-[560px] -translate-y-1/2 xl:block">
         {/* rotating rings */}
         <div className="niu-spin absolute inset-0 rounded-full border-2 border-dashed border-white/25" />
         <div className="niu-spin-rev absolute inset-[5%] rounded-full border border-white/15" />
@@ -82,17 +82,6 @@ export function HeroMedia() {
             </span>
           </span>
 
-          {/* slide progress dots */}
-          <span className="absolute bottom-5 left-1/2 flex -translate-x-1/2 gap-1.5">
-            {SLIDES.map((s, i) => (
-              <span
-                key={s}
-                className={`h-1.5 rounded-full transition-all duration-500 ${
-                  i === index ? "w-5 bg-white" : "w-1.5 bg-white/50"
-                }`}
-              />
-            ))}
-          </span>
         </button>
 
         {/* orbiting dots */}
@@ -104,7 +93,7 @@ export function HeroMedia() {
         </div>
 
         {/* floating stat cards */}
-        <div className="niu-float absolute -left-[7%] top-[15%] rounded-2xl bg-white px-5 py-3 shadow-[0_18px_44px_rgba(10,5,40,0.5)]">
+        <div className="niu-float absolute -left-[3%] top-[15%] rounded-2xl bg-white px-5 py-3 shadow-[0_18px_44px_rgba(10,5,40,0.5)]">
           <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#2f85c2]">
             Proyectos
           </p>

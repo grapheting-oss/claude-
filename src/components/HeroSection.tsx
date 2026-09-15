@@ -1,4 +1,4 @@
-import { ArrowUpRightIcon } from "@/components/icons";
+
 import { HeroStats } from "@/components/HeroStats";
 import { HeroMedia } from "@/components/HeroMedia";
 
@@ -58,7 +58,7 @@ export function HeroSection() {
       <HeroMedia />
 
       <div className="relative mx-auto w-full max-w-[1320px] px-5 pt-36 pb-24 md:px-10 md:pt-40 md:pb-28">
-        <h1 className="max-w-3xl font-display text-4xl font-semibold leading-[0.98] text-white sm:text-5xl md:text-6xl lg:text-[64px] xl:text-[72px]">
+        <h1 className="max-w-2xl font-display text-4xl font-semibold leading-[0.98] text-white sm:text-5xl md:text-6xl lg:text-[56px] xl:text-[64px]">
           Conectamos creatividad con{" "}
           <span className="relative inline-block">
             propósito
@@ -90,8 +90,8 @@ export function HeroSection() {
             className="group inline-flex items-center gap-5 rounded-full bg-[#2f85c2] py-3 pl-9 pr-3 text-lg font-semibold text-white transition-colors hover:bg-[#3f97d1]"
           >
             Cotiza tu proyecto
-            <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/20 transition-transform group-hover:rotate-45">
-              <ArrowUpRightIcon className="h-5 w-5" />
+            <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/20 transition-transform group-hover:scale-110">
+              <WhatsappIcon />
             </span>
           </a>
           <a

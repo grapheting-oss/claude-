@@ -1,4 +1,4 @@
-import { ArrowUpRightIcon, WhatsAppIcon } from "@/components/icons";
+import { WhatsAppIcon } from "@/components/icons";
 
 export function CtaSection() {
   const outline =
@@ -31,8 +31,8 @@ export function CtaSection() {
                   className="group inline-flex items-center gap-4 rounded-full border-2 border-[#2f85c2] py-2 pl-8 pr-2 text-[16px] font-semibold text-white transition-colors hover:bg-[#2f85c2]/10"
                 >
                   Cotiza tu proyecto
-                  <span className="grid h-11 w-11 place-items-center rounded-full bg-[#2f85c2] text-white transition-transform duration-300 group-hover:rotate-45">
-                    <ArrowUpRightIcon className="h-5 w-5" />
+                  <span className="grid h-11 w-11 place-items-center rounded-full bg-[#2f85c2] text-white transition-transform duration-300 group-hover:scale-110">
+                    <WhatsAppIcon className="h-5 w-5" />
                   </span>
                 </a>
 

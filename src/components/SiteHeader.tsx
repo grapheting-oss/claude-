@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { MenuIcon, CloseIcon, ArrowUpRightIcon } from "@/components/icons";
+import { MenuIcon, CloseIcon, WhatsAppIcon } from "@/components/icons";
 
 const NAV = [
   { label: "Inicio", href: "#top" },
@@ -57,7 +57,7 @@ export function SiteHeader() {
             className="hidden items-center gap-2 rounded-full bg-[#2f85c2] hover:bg-[#3f97d1] px-6 py-3 text-[15px] font-medium text-white transition-transform hover:scale-105 sm:inline-flex"
           >
             Cotiza tu proyecto
-            <ArrowUpRightIcon className="h-4 w-4" />
+            <WhatsAppIcon className="h-4 w-4" />
           </a>
           <button
             type="button"
@@ -89,7 +89,7 @@ export function SiteHeader() {
               className="mt-4 inline-flex w-fit items-center gap-2 rounded-full bg-[#2f85c2] hover:bg-[#3f97d1] px-6 py-3 text-sm font-medium text-white"
             >
               Cotiza tu proyecto
-              <ArrowUpRightIcon className="h-4 w-4" />
+              <WhatsAppIcon className="h-4 w-4" />
             </a>
           </nav>
         </div>

@@ -1,4 +1,4 @@
-import { ArrowUpRightIcon } from "@/components/icons";
+import { WhatsAppIcon } from "@/components/icons";
 
 type FooterLink = {
   label: string;
@@ -66,8 +66,8 @@ export function SiteFooter() {
               className="group inline-flex shrink-0 items-center gap-3 rounded-full bg-[#2f85c2] py-3 pl-8 pr-3 text-[16px] font-semibold text-white transition-colors hover:bg-[#3f97d1]"
             >
               Cotiza tu proyecto
-              <span className="grid h-10 w-10 place-items-center rounded-full bg-white/20 transition-transform duration-300 group-hover:rotate-45">
-                <ArrowUpRightIcon aria-hidden="true" className="h-4 w-4" />
+              <span className="grid h-10 w-10 place-items-center rounded-full bg-white/20 transition-transform duration-300 group-hover:scale-110">
+                <WhatsAppIcon aria-hidden="true" className="h-4 w-4" />
               </span>
             </a>
           </div>
