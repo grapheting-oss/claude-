@@ -7,12 +7,14 @@ type ServiceBlock = {
   title: string;
   items: string[];
   gradient: string;
+  image: string;
 };
 
 const blocks: ServiceBlock[] = [
   {
     title: "Identidad y branding",
     gradient: "from-[#4a3b94] to-[#3379e7]",
+    image: "/images/services/s6.jpg",
     items: [
       "Diseño de identidad corporativa",
       "Logotipo y sistema visual",
@@ -23,6 +25,7 @@ const blocks: ServiceBlock[] = [
   {
     title: "Diseño para redes sociales",
     gradient: "from-[#3379e7] to-[#8b6ff0]",
+    image: "/images/services/s2.jpg",
     items: [
       "Piezas y plantillas para redes",
       "Línea gráfica de contenido",
@@ -33,6 +36,7 @@ const blocks: ServiceBlock[] = [
   {
     title: "Diseño editorial e impresos",
     gradient: "from-[#8b6ff0] to-[#2f85c2]",
+    image: "/images/services/s7.jpg",
     items: [
       "Catálogos y folletos",
       "Brochures y revistas",
@@ -43,6 +47,7 @@ const blocks: ServiceBlock[] = [
   {
     title: "Audiovisual y presentaciones",
     gradient: "from-[#2f85c2] to-[#3379e7]",
+    image: "/images/services/s5.jpg",
     items: [
       "Edición de video para redes",
       "Presentaciones corporativas",
@@ -139,15 +144,31 @@ export function CreativeServices() {
             <article
               key={i}
               aria-hidden={i >= blocks.length ? "true" : undefined}
-              className={`relative mr-5 flex min-h-[420px] w-[300px] shrink-0 flex-col justify-between overflow-hidden border border-white/10 bg-gradient-to-br p-8 sm:w-[360px] ${block.gradient}`}
+              className="relative mr-5 flex min-h-[420px] w-[300px] shrink-0 flex-col justify-between overflow-hidden border border-white/10 p-8 sm:w-[360px]"
             >
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+              {/* Full-bleed image */}
+              <img
+                src={block.image}
+                alt=""
+                draggable={false}
+                className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+                loading="lazy"
+              />
 
-              <h3 className="font-display pointer-events-none relative max-w-[15ch] text-[26px] font-bold leading-[1.05] tracking-tight">
+              {/* Brand wash — adds colour without crushing the photo */}
+              <div
+                className={`pointer-events-none absolute inset-0 bg-gradient-to-br mix-blend-soft-light opacity-60 ${block.gradient}`}
+              />
+
+              {/* Scrims only where the text sits, so the middle stays clear */}
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-2/5 bg-gradient-to-b from-black/75 via-black/30 to-transparent" />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-black/90 via-black/55 to-transparent" />
+
+              <h3 className="font-display pointer-events-none relative max-w-[15ch] text-[26px] font-bold leading-[1.05] tracking-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.55)]">
                 {block.title}
               </h3>
 
-              <ul className="pointer-events-none relative mt-8 space-y-3">
+              <ul className="pointer-events-none relative space-y-3 drop-shadow-[0_1px_8px_rgba(0,0,0,0.6)]">
                 {block.items.map((item) => (
                   <li
                     key={item}

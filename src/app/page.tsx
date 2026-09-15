@@ -1,6 +1,7 @@
 import { SiteHeader } from "@/components/SiteHeader";
 import { BackgroundFX } from "@/components/BackgroundFX";
 import { HeroSection } from "@/components/HeroSection";
+import { BrandsMarquee } from "@/components/BrandsMarquee";
 import { FounderSection } from "@/components/FounderSection";
 import { QuoteBanner } from "@/components/QuoteBanner";
 import { ServicesMarquee } from "@/components/ServicesMarquee";
@@ -18,6 +19,7 @@ export default function Home() {
       <SiteHeader />
       <main className="flex-1">
         <HeroSection />
+        <BrandsMarquee />
         <ServicesMarquee />
         <div id="services">
           <ServicesGrid />

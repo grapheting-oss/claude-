@@ -209,3 +209,9 @@
 @media (prefers-reduced-motion: reduce) {
   .niu-spin, .niu-spin-rev, .niu-float, .niu-float2, .niu-pulse { animation: none; }
 }
+/* Brand logo band under the hero */
+.niu-brands-track {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: od-marquee 38s linear infinite;
+}
