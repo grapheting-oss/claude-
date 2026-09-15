@@ -215,3 +215,20 @@
   white-space: nowrap;
   animation: od-marquee 38s linear infinite;
 }
+
+/* Two-row testimonial marquees, opposite directions */
+@keyframes niu-row-left  { from { transform: translateX(0); }      to { transform: translateX(-50%); } }
+@keyframes niu-row-right { from { transform: translateX(-50%); }   to { transform: translateX(0); } }
+.niu-row-left,
+.niu-row-right {
+  display: inline-flex;
+  width: max-content;
+  will-change: transform;
+}
+.niu-row-left  { animation: niu-row-left  70s linear infinite; }
+.niu-row-right { animation: niu-row-right 70s linear infinite; }
+.niu-rows:hover .niu-row-left,
+.niu-rows:hover .niu-row-right { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .niu-row-left, .niu-row-right { animation: none; }
+}
