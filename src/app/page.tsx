@@ -19,7 +19,6 @@ export default function Home() {
       <SiteHeader />
       <main className="flex-1">
         <HeroSection />
-        <BrandsMarquee />
         <ServicesMarquee />
         <div id="services">
           <ServicesGrid />
@@ -28,6 +27,7 @@ export default function Home() {
           <FounderSection />
         </div>
         <QuoteBanner />
+        <BrandsMarquee />
         <div id="work">
           <ProjectsShowcase />
         </div>
