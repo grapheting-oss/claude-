@@ -75,12 +75,12 @@ export function HeroSection() {
       </div>
 
       <div className="relative mx-auto w-full max-w-[1320px] px-5 pt-36 pb-24 md:px-10 md:pt-40 md:pb-28">
-        <h1 className="max-w-5xl font-display text-5xl font-semibold leading-[0.95] text-white sm:text-6xl md:text-7xl lg:text-[84px] xl:text-[96px]">
+        <h1 className="max-w-3xl font-display text-4xl font-semibold leading-[0.98] text-white sm:text-5xl md:text-6xl lg:text-[64px] xl:text-[72px]">
           Conectamos creatividad con{" "}
           <span className="relative inline-block">
             propósito
             <svg
-              className="absolute -bottom-6 left-0 w-full md:-bottom-10"
+              className="absolute -bottom-4 left-0 w-full md:-bottom-7"
               viewBox="0 0 300 20"
               fill="none"
               aria-hidden="true"
@@ -96,7 +96,7 @@ export function HeroSection() {
           </span>
         </h1>
 
-        <p className="mt-16 max-w-xl text-lg text-white/75 md:mt-20 md:text-xl">
+        <p className="mt-12 max-w-xl text-lg text-white/75 md:mt-14 md:text-xl">
           Te ayudamos a crear soluciones creativas desde lo que tu marca
           realmente necesita. Transformamos ideas en resultados.
         </p>
