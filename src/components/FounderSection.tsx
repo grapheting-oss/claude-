@@ -29,7 +29,7 @@ const TEAM: Member[] = [
 
 export function FounderSection() {
   return (
-    <section className="bg-transparent pb-20 pt-32 md:pb-28 md:pt-48">
+    <section className="bg-transparent pb-20 pt-4 md:pb-28 md:pt-8">
       <div className="mx-auto max-w-[1320px] px-5 md:px-10">
         <div className="max-w-2xl">
           <span className="font-display text-[13px] font-semibold uppercase tracking-[0.28em] text-[#7fb2e6]">
